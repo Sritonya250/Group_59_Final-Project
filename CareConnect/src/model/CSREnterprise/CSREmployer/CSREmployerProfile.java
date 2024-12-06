@@ -8,6 +8,25 @@ package model.CSREnterprise.CSREmployer;
  *
  * @author tbhar
  */
-public class CSREmployerProfile {
+public class CSREmployerProfile extends Profile{
+    
+    String license;
+
+    public CSREmployerProfile(Person p) {
+        super(p);
+    }
+
+    public String getLicense() {
+        return license;
+    }
+
+    public void setLicense(String license) {
+        this.license = license;
+    }
+
+    @Override
+    public UserRole getRole() {
+        return UserRole.CSR_EMPLOYER;
+    }
     
 }
