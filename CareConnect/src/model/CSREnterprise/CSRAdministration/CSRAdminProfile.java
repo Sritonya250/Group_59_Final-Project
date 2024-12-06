@@ -8,6 +8,15 @@ package model.CSREnterprise.CSRAdministration;
  *
  * @author tbhar
  */
-public class CSRAdminProfile {
+public class CSRAdminProfile extends Profile {
+
+    public CSRAdminProfile(Person p) {
+        super(p);
+    }
+
+    @Override
+    public UserRole getRole() {
+        return UserRole.CSR_ADMIN;
+    }
     
 }
