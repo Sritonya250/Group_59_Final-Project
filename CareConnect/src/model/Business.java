@@ -30,7 +30,7 @@ import utils.Neighbourhood;
 
 /**
  *
- * @author vishnupaduchuri
+ * @author Monisha Narendran
  */
 public class Model {
     String name;

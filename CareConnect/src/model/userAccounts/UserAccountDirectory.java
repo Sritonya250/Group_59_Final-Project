@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package business.userAccounts;
+package model.userAccounts;
 
-import business.profile.Profile;
+import model.profile.Profile;
 import java.util.ArrayList;
 
 /**
  *
- * @author nagal
+ * @author Monisha Narendran
  */
 public class UserAccountDirectory {
     ArrayList<UserAccount> userAccountList;
