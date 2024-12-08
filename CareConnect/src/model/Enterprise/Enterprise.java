@@ -12,7 +12,7 @@ import model.userAccounts.UserAccountDirectory;
 
 /**
  *
- * @author sritonya
+ * @author Monisha Narendran
  */
 public abstract class Enterprise {
     
