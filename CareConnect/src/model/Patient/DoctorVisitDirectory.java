@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package business.Patient;
+package model.Patient;
 
-import business.ClinicEnterprise.ClinicDoctor.ClinicDoctorProfile;
+import model.ClinicEnterprise.ClinicDoctor.ClinicDoctorProfile;
 import java.util.ArrayList;
 
 /**
  *
- * @author nagal
+ * @author Monisha Narendran
  */
 public class DoctorVisitDirectory {
     private ArrayList<DoctorVisit> doctorVisitList;
