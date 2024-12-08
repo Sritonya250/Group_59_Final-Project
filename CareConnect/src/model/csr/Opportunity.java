@@ -4,6 +4,9 @@
  */
 package model.csr;
 
+import model.CSREnterprise.CSREmployer.CSREmployerProfile;
+import model.shelter.EmployableSkills;
+
 /**
  *
  * @author tbhar

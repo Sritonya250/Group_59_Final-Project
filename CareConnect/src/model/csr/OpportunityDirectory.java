@@ -5,6 +5,8 @@
 package model.csr;
 
 import java.util.ArrayList;
+import model.CSREnterprise.CSREmployer.CSREmployerProfile;
+import model.shelter.EmployableSkills;
 
 /**
  *
