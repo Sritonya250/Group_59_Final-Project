@@ -158,6 +158,11 @@ public class ClinicDoctorJPanel extends javax.swing.JPanel {
         jLabel9.setText("Specalization:");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
 
+        specalizationDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                specalizationDropDownActionPerformed(evt);
+            }
+        });
         add(specalizationDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -286,6 +291,10 @@ public class ClinicDoctorJPanel extends javax.swing.JPanel {
         txtPassword.setText("");
         spinnerAge.setValue(0);
     }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void specalizationDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specalizationDropDownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_specalizationDropDownActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
