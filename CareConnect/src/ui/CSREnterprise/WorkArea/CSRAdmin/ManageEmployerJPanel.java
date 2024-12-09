@@ -4,7 +4,11 @@
  */
 package ui.CSREnterprise.WorkArea.CSRAdmin;
 
+<<<<<<< HEAD
 import model.Business;
+=======
+import model.Model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.CSREnterprise.CSRAdministration.CSRAdminProfile;
 import model.CSREnterprise.CSREmployer.CSREmployerProfile;
 import model.Enterprise.CSREnterprise;
@@ -24,15 +28,25 @@ public class ManageEmployerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageEmployerJPanel
      */
+<<<<<<< HEAD
     Business business;
+=======
+    Model model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     CSREnterprise enterprise;
     CSRAdministrationOrganization organization;
     CSRAdminProfile currentAuthenticatedUser;
     UserAccount currentUser;
     UserAccount selectedEmployerUser;
+<<<<<<< HEAD
     public ManageEmployerJPanel(Business business, CSREnterprise enterprise, CSRAdministrationOrganization organization, CSRAdminProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         this.business = business;
+=======
+    public ManageEmployerJPanel(Model model, CSREnterprise enterprise, CSRAdministrationOrganization organization, CSRAdminProfile currentAuthenticatedUser, UserAccount currentUser) {
+        initComponents();
+        this.model = model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

@@ -4,7 +4,11 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
+<<<<<<< HEAD
 import model.Business;
+=======
+import model.Model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.Enterprise.Enterprise;
 import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
 import model.Organization.Organization;
@@ -14,9 +18,15 @@ import model.person.Person;
 import model.userAccounts.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+<<<<<<< HEAD
 import static utils.BusinessUtils.isValidEmail;
 import static utils.BusinessUtils.isValidPassword;
 import static utils.BusinessUtils.isValidPhoneNumber;
+=======
+import static utils.ModelUtils.isValidEmail;
+import static utils.ModelUtils.isValidPassword;
+import static utils.ModelUtils.isValidPhoneNumber;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
 /**
  *
@@ -28,15 +38,26 @@ public class NGOVolunteerManageProfileJPanel extends javax.swing.JPanel {
      * Creates new form NGOVolunteerManageProfileJPanel
      */
     JPanel UserMainContainer;
+<<<<<<< HEAD
     Business business;
+=======
+    Model model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     Enterprise enterprise;
     Organization organization;
     NGOVolunteerProfile currentAuthenticatedUser;
     UserAccount currentUser;
+<<<<<<< HEAD
     public NGOVolunteerManageProfileJPanel(JPanel UserMainContainer, Business business, Enterprise enterprise, Organization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         this.UserMainContainer = UserMainContainer;
         this.business = business;
+=======
+    public NGOVolunteerManageProfileJPanel(JPanel UserMainContainer, Model model, Enterprise enterprise, Organization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
+        initComponents();
+        this.UserMainContainer = UserMainContainer;
+        this.model = model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -341,7 +362,11 @@ public class NGOVolunteerManageProfileJPanel extends javax.swing.JPanel {
             return;
         }
 
+<<<<<<< HEAD
         boolean isExistingUser = business.isExistingUserByUserName(userName);
+=======
+        boolean isExistingUser = model.isExistingUserByUserName(userName);
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -361,7 +386,11 @@ public class NGOVolunteerManageProfileJPanel extends javax.swing.JPanel {
 
         NGOVolunteerProfile ngoVolunteer = new NGOVolunteerProfile(p);
 
+<<<<<<< HEAD
         Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(ngoVolunteer.getRole());
+=======
+        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(ngoVolunteer.getRole());
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(ngoVolunteer.getRole());
 
         UserAccount ngoVolunteerUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(ngoVolunteer, userName, password, false);

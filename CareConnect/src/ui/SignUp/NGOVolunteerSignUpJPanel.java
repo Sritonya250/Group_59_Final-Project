@@ -4,7 +4,11 @@
  */
 package ui.SignUp;
 
+<<<<<<< HEAD
 import model.Business;
+=======
+import model.Model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.Enterprise.Enterprise;
 import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
 import model.Organization.Organization;
@@ -15,9 +19,15 @@ import model.userAccounts.UserAccount;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+<<<<<<< HEAD
 import static utils.BusinessUtils.isValidEmail;
 import static utils.BusinessUtils.isValidPassword;
 import static utils.BusinessUtils.isValidPhoneNumber;
+=======
+import static utils.ModelUtils.isValidEmail;
+import static utils.ModelUtils.isValidPassword;
+import static utils.ModelUtils.isValidPhoneNumber;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
 /**
  *
@@ -30,12 +40,21 @@ public class NGOVolunteerSignUpJPanel extends javax.swing.JPanel {
      */
     
     JPanel UserMainContainer;
+<<<<<<< HEAD
     Business business;
     public NGOVolunteerSignUpJPanel(JPanel UserMainContainer, Business business) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
         this.business = business;
+=======
+    Model model;
+    public NGOVolunteerSignUpJPanel(JPanel UserMainContainer, Model model) {
+        initComponents();
+        
+        this.UserMainContainer = UserMainContainer;
+        this.model = model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         
         populateDropDowns();
     }
@@ -232,7 +251,11 @@ public class NGOVolunteerSignUpJPanel extends javax.swing.JPanel {
             return;
         }
 
+<<<<<<< HEAD
         boolean isExistingUser = business.isExistingUserByUserName(userName);
+=======
+        boolean isExistingUser = model.isExistingUserByUserName(userName);
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -252,7 +275,11 @@ public class NGOVolunteerSignUpJPanel extends javax.swing.JPanel {
 
         NGOVolunteerProfile ngoVolunteer = new NGOVolunteerProfile(p);
 
+<<<<<<< HEAD
         Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(ngoVolunteer.getRole());
+=======
+        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(ngoVolunteer.getRole());
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(ngoVolunteer.getRole());
 
         UserAccount ngoVolunteerUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(ngoVolunteer, userName, password, false);

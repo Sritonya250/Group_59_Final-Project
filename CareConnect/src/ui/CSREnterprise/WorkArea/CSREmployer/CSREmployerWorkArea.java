@@ -4,7 +4,11 @@
  */
 package ui.CSREnterprise.WorkArea.CSREmployer;
 
+<<<<<<< HEAD
 import model.Business;
+=======
+import model.Model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.CSREnterprise.CSRAdministration.CSRAdminProfile;
 import model.CSREnterprise.CSREmployer.CSREmployerProfile;
 import model.Enterprise.CSREnterprise;
@@ -25,17 +29,29 @@ public class CSREmployerWorkArea extends javax.swing.JPanel {
      * Creates new form CSREmployerJPanel
      */
     JPanel UserMainContainer;
+<<<<<<< HEAD
     Business business;
+=======
+    Model model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     CSREnterprise enterprise;
     CSREmployerOrganization organization;
     CSREmployerProfile currentAuthenticatedUser;
     UserAccount currentUser;
     
+<<<<<<< HEAD
     public CSREmployerWorkArea(JPanel UserMainContainer, Business business, CSREnterprise enterprise, CSREmployerOrganization organization, CSREmployerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
         this.business = business;
+=======
+    public CSREmployerWorkArea(JPanel UserMainContainer, Model model, CSREnterprise enterprise, CSREmployerOrganization organization, CSREmployerProfile currentAuthenticatedUser, UserAccount currentUser) {
+        initComponents();
+        
+        this.UserMainContainer = UserMainContainer;
+        this.model = model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -153,13 +169,21 @@ public class CSREmployerWorkArea extends javax.swing.JPanel {
 
     private void btnManageProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageProfileActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         CSREmployerManageProfileJPanel manageProfilePanel = new CSREmployerManageProfileJPanel(business, enterprise, organization, currentAuthenticatedUser, currentUser);
+=======
+        CSREmployerManageProfileJPanel manageProfilePanel = new CSREmployerManageProfileJPanel(model, enterprise, organization, currentAuthenticatedUser, currentUser);
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         csrEmployerSplitPane.setRightComponent(manageProfilePanel);
     }//GEN-LAST:event_btnManageProfileActionPerformed
 
     private void btnCreateOpportunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateOpportunityActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         CreateOpportunity createOpportunityPanel = new CreateOpportunity(business, enterprise, organization, currentAuthenticatedUser, currentUser);
+=======
+        CreateOpportunity createOpportunityPanel = new CreateOpportunity(model, enterprise, organization, currentAuthenticatedUser, currentUser);
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         csrEmployerSplitPane.setRightComponent(createOpportunityPanel);
     }//GEN-LAST:event_btnCreateOpportunityActionPerformed
 
