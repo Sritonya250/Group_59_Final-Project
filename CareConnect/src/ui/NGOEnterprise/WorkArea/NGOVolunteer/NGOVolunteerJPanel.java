@@ -1,13 +1,13 @@
 package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
-import business.Business;
-import business.Enterprise.Enterprise;
-import business.Enterprise.NGOEnterprise;
-import business.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
-import business.Organization.NGOAdministrationOrganization;
-import business.Organization.NGOVolunteerOrganization;
-import business.Organization.Organization;
-import business.userAccounts.UserAccount;
+import model.Model;
+import model.Enterprise.Enterprise;
+import model.Enterprise.NGOEnterprise;
+import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
+import model.Organization.NGOAdministrationOrganization;
+import model.Organization.NGOVolunteerOrganization;
+import model.Organization.Organization;
+import model.userAccounts.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -23,7 +23,7 @@ import javax.swing.JPanel;
 public class NGOVolunteerJPanel extends javax.swing.JPanel {
 
     JPanel UserMainContainer;
-    Business business;
+    Model model;
     NGOEnterprise enterprise;
     NGOVolunteerOrganization organization;
     NGOVolunteerProfile currentAuthenticatedUser;
@@ -32,16 +32,16 @@ public class NGOVolunteerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NGOVolunteerJPanel
      * @param UserMainContainer
-     * @param business
+     * @param model
      * @param enterprise
      * @param organization
      * @param currentAuthenticatedUser
      * @param currentUser
      */
-    public NGOVolunteerJPanel(JPanel UserMainContainer, Business business, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public NGOVolunteerJPanel(JPanel UserMainContainer, Model model, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         this.UserMainContainer = UserMainContainer;
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -50,7 +50,7 @@ public class NGOVolunteerJPanel extends javax.swing.JPanel {
     }
     
     public void showHomePage() {
-        VolunteerHomePageJPanel homePage = new VolunteerHomePageJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        VolunteerHomePageJPanel homePage = new VolunteerHomePageJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         volunteerSplitPane.setRightComponent(homePage);
     }
 
@@ -134,7 +134,7 @@ public class NGOVolunteerJPanel extends javax.swing.JPanel {
 
     private void btnSignUpPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpPatientActionPerformed
         // TODO add your handling code here:
-        SignUpPatientsJPanel signUpPatients = new SignUpPatientsJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        SignUpPatientsJPanel signUpPatients = new SignUpPatientsJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         volunteerSplitPane.setRightComponent(signUpPatients);
     }//GEN-LAST:event_btnSignUpPatientActionPerformed
 
@@ -147,7 +147,7 @@ public class NGOVolunteerJPanel extends javax.swing.JPanel {
 
     private void btnUpdateSelfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateSelfActionPerformed
         // TODO add your handling code here:
-        UpdateSelfJPanel updateSelfPanel = new UpdateSelfJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        UpdateSelfJPanel updateSelfPanel = new UpdateSelfJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         volunteerSplitPane.setRightComponent(updateSelfPanel);
     }//GEN-LAST:event_btnUpdateSelfActionPerformed
 

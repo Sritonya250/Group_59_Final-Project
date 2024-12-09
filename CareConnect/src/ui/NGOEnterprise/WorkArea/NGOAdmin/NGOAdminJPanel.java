@@ -4,13 +4,13 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOAdmin;
 
-import business.Business;
-import business.Enterprise.Enterprise;
-import business.Enterprise.NGOEnterprise;
-import business.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
-import business.Organization.NGOAdministrationOrganization;
-import business.Organization.Organization;
-import business.userAccounts.UserAccount;
+import model.Model;
+import model.Enterprise.Enterprise;
+import model.Enterprise.NGOEnterprise;
+import model.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
+import model.Organization.NGOAdministrationOrganization;
+import model.Organization.Organization;
+import model.userAccounts.UserAccount;
 import java.awt.CardLayout;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
@@ -24,7 +24,7 @@ import javax.swing.JPanel;
 public class NGOAdminJPanel extends javax.swing.JPanel {
 
     JPanel UserMainContainer;
-    Business business;
+    Model model;
     NGOEnterprise enterprise;
     NGOAdministrationOrganization organization;
     NGOSupervisorProfile currentAuthenticatedUser;
@@ -33,11 +33,11 @@ public class NGOAdminJPanel extends javax.swing.JPanel {
      * Creates new form NGOAdminJPanel
      * @param UserMainContainer
      */
-    public NGOAdminJPanel(JPanel UserMainContainer, Business business, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public NGOAdminJPanel(JPanel UserMainContainer, Model model, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         DisplayDateAndTime();
         this.UserMainContainer = UserMainContainer;
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -154,13 +154,13 @@ public class NGOAdminJPanel extends javax.swing.JPanel {
 
     private void btnManageVolunteersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVolunteersActionPerformed
         // TODO add your handling code here:
-        ManageNGOVolunteersJPanel manageNGOVolunteers = new ManageNGOVolunteersJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        ManageNGOVolunteersJPanel manageNGOVolunteers = new ManageNGOVolunteersJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         ngoAdminSplitPane.setRightComponent(manageNGOVolunteers);
     }//GEN-LAST:event_btnManageVolunteersActionPerformed
 
     private void btnAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalyticsActionPerformed
         // TODO add your handling code here:
-        ViewAnalyticsJPanel viewAnalytics = new ViewAnalyticsJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        ViewAnalyticsJPanel viewAnalytics = new ViewAnalyticsJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         ngoAdminSplitPane.setRightComponent(viewAnalytics);
     }//GEN-LAST:event_btnAnalyticsActionPerformed
 

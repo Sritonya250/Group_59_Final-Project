@@ -4,16 +4,16 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOAdmin;
 
-import business.Business;
-import business.Enterprise.Enterprise;
-import business.Enterprise.NGOEnterprise;
-import business.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
-import business.Organization.NGOAdministrationOrganization;
-import business.Organization.Organization;
-import business.Patient.Issue;
-import business.Patient.PatientProfile;
-import business.profile.UserRole;
-import business.userAccounts.UserAccount;
+import model.Model;
+import model.Enterprise.Enterprise;
+import model.Enterprise.NGOEnterprise;
+import model.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
+import model.Organization.NGOAdministrationOrganization;
+import model.Organization.Organization;
+import model.Patient.Issue;
+import model.Patient.PatientProfile;
+import model.profile.UserRole;
+import model.userAccounts.UserAccount;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import utils.Neighbourhood;
  */
 public class ViewAnalyticsJPanel extends javax.swing.JPanel {
 
-    Business business;
+    Model model;
     NGOEnterprise enterprise;
     NGOAdministrationOrganization organization;
     NGOSupervisorProfile currentAuthenticatedUser;
@@ -38,10 +38,10 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewAnalyticsJPanel
      */
-    public ViewAnalyticsJPanel(Business business, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ViewAnalyticsJPanel(Model model, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         DisplayDateAndTime();
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -56,7 +56,7 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
     
     public void populateLabelMetrics() {
         
-        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+        ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
         noOfPatients.setText(Integer.toString(users.size()));
         
         ArrayList<UserAccount> ngoVolunteers = enterprise.getOrganizationGivenRole(UserRole.NGO_VOLUNTEER).getOrganizationUserDirectory().getUserAccountList();
@@ -73,7 +73,7 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) neightbourhoodsAttentionTable.getModel();
         model.setRowCount(0);
 
-        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+        ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
 
         HashMap<String, Integer> neighborhoodCountMap = new HashMap<>();
 
@@ -101,7 +101,7 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) ethnicityTable.getModel();
         model.setRowCount(0);
 
-        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+        ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
 
         HashMap<String, Integer> ethnicityMap = new HashMap<>();
 
@@ -129,7 +129,7 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) genderCompTable.getModel();
         model.setRowCount(0);
 
-        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+        ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
 
         HashMap<String, Integer> genderMap = new HashMap<>();
 
@@ -157,7 +157,7 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) primaryIssueTable.getModel();
         model.setRowCount(0);
 
-        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+        ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
 
         HashMap<String, Integer> issueMap = new HashMap<>();
 
@@ -185,7 +185,7 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) SecondaryIssueTable.getModel();
         model.setRowCount(0);
 
-        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+        ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
 
         HashMap<String, Integer> issueMap = new HashMap<>();
 

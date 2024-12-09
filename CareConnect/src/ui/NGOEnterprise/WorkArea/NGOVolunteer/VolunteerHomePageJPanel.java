@@ -4,13 +4,13 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
-import business.Business;
-import business.Enterprise.Enterprise;
-import business.Enterprise.NGOEnterprise;
-import business.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
-import business.Organization.NGOVolunteerOrganization;
-import business.Organization.Organization;
-import business.userAccounts.UserAccount;
+import model.Model;
+import model.Enterprise.Enterprise;
+import model.Enterprise.NGOEnterprise;
+import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
+import model.Organization.NGOVolunteerOrganization;
+import model.Organization.Organization;
+import model.userAccounts.UserAccount;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -20,7 +20,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class VolunteerHomePageJPanel extends javax.swing.JPanel {
 
-    Business business;
+    Model model;
     NGOEnterprise enterprise;
     NGOVolunteerOrganization organization;
     NGOVolunteerProfile currentAuthenticatedUser;
@@ -28,9 +28,9 @@ public class VolunteerHomePageJPanel extends javax.swing.JPanel {
     /**
      * Creates new form VolunteerHomePageJPanel
      */
-    public VolunteerHomePageJPanel(Business business, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public VolunteerHomePageJPanel(Model model, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

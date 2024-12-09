@@ -22,7 +22,7 @@ import static utils.BusinessUtils.isValidPhoneNumber;
 
 /**
  *
- * @author ketan
+ * @author tbhar
  */
 public class NGOAdminManageProfileJPanel extends javax.swing.JPanel {
 

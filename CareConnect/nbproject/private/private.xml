@@ -28,6 +28,32 @@
             <file>file:/Users/sritonya/Downloads/Group_59_Final-Project-tonya/CareConnect/src/utils/Temperature.java</file>
             <file>file:/Users/sritonya/Downloads/Group_59_Final-Project-tonya/CareConnect/src/model/ShelterEnterprise/ShelterAdministration/ShelterSupervisorProfile.java</file>
             <file>file:/Users/sritonya/Downloads/Group_59_Final-Project-tonya/CareConnect/src/model/person/Person.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/Profile/ValidUserRoleDirectory.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/Profile/UserRole.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/NGOEnterprise/WorkArea/NGOVolunteer/SignUpPatientsJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/Profile/Profile.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/NGOEnterprise/WorkArea/NGOVolunteer/UpdateSelfJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/NGOEnterprise/WorkArea/NGOVolunteer/VolunteerHomePageJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/CSREnterprise/CSREmployer/CSREmployerProfile.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/SignIn/SignInJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/NGOEnterprise/WorkArea/NGOAdmin/ViewAnalyticsJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/CSREnterprise/WorkArea/CSRAdmin/CSRAdminManageProfileJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/NGOEnterprise/WorkArea/NGOAdmin/ManageNGOVolunteersJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/CSREnterprise/CSRAdministration/CSRAdminProfile.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/CSREnterprise/WorkArea/CSRAdmin/ManageEmployerJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/CSREnterprise/WorkArea/CSREmployer/CSREmployerWorkArea.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/NGOEnterprise/WorkArea/NGOAdmin/NGOAdminManageProfileJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/CSREnterprise/WorkArea/CSREmployer/CreateOpportunity.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/NGOEnterprise/WorkArea/NGOVolunteer/NGOVolunteerJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/ShelterEnterprise/ShelterUpSkillDept/ShelterTrainerProfile.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/csr/Opportunity.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/NGOEnterprise/WorkArea/NGOVolunteer/NGOVolunteerManageProfileJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/CSREnterprise/WorkArea/CSRAdmin/CSRAdminWorkArea.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/NGOEnterprise/WorkArea/NGOAdmin/NGOAdminJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/Enterprise/CSREnterprise.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/ui/CSREnterprise/WorkArea/CSREmployer/CSREmployerManageProfileJPanel.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/csr/OpportunityDirectory.java</file>
+            <file>file:/C:/Users/tbhar/OneDrive/Documents/NetBeansProjects/AED_FINAL_PROJECT/Group_59_Final-Project/CareConnect/src/model/NGOEnterprise/NGOAdministration/NGOSupervisorProfile.java</file>
         </group>
     </open-files>
 </project-private>
