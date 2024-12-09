@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author vishnupaduchuri
+ * @author tbhar
  */
 public class NGOAdminJPanel extends javax.swing.JPanel {
 
