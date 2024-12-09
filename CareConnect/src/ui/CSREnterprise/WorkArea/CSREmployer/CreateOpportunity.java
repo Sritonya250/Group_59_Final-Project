@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author nagal
+ * @author tbhar
  */
 public class CreateOpportunity extends javax.swing.JPanel {
 
