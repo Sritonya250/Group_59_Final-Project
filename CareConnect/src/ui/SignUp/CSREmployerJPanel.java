@@ -4,11 +4,7 @@
  */
 package ui.SignUp;
 
-<<<<<<< HEAD
 import model.Business;
-=======
-import model.Model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.CSREnterprise.CSREmployer.CSREmployerProfile;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
@@ -19,15 +15,9 @@ import model.userAccounts.UserAccount;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-<<<<<<< HEAD
 import static utils.BusinessUtils.isValidEmail;
 import static utils.BusinessUtils.isValidPassword;
 import static utils.BusinessUtils.isValidPhoneNumber;
-=======
-import static utils.ModelUtils.isValidEmail;
-import static utils.ModelUtils.isValidPassword;
-import static utils.ModelUtils.isValidPhoneNumber;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
 /**
  *
@@ -36,7 +26,6 @@ import static utils.ModelUtils.isValidPhoneNumber;
 public class CSREmployerJPanel extends javax.swing.JPanel {
 
     JPanel UserMainContainer;
-<<<<<<< HEAD
     Business business;
     /**
      * Creates new form CSREmployerJPanel
@@ -46,17 +35,6 @@ public class CSREmployerJPanel extends javax.swing.JPanel {
         
         this.UserMainContainer = UserMainContainer;
         this.business = business;
-=======
-    Model model;
-    /**
-     * Creates new form CSREmployerJPanel
-     */
-    public CSREmployerJPanel(JPanel UserMainContainer, Model model) {
-        initComponents();
-        
-        this.UserMainContainer = UserMainContainer;
-        this.model = model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         
         populateDropDowns();
     }
@@ -253,11 +231,7 @@ public class CSREmployerJPanel extends javax.swing.JPanel {
             return;
         }
 
-<<<<<<< HEAD
         boolean isExistingUser = business.isExistingUserByUserName(userName);
-=======
-        boolean isExistingUser = model.isExistingUserByUserName(userName);
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -277,11 +251,7 @@ public class CSREmployerJPanel extends javax.swing.JPanel {
 
         CSREmployerProfile csrEmployer = new CSREmployerProfile(p);
 
-<<<<<<< HEAD
         Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(csrEmployer.getRole());
-=======
-        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(csrEmployer.getRole());
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(csrEmployer.getRole());
 
         UserAccount csrEmployerUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(csrEmployer, userName, password, false);

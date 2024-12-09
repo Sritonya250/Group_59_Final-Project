@@ -4,11 +4,7 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
-<<<<<<< HEAD
 import model.Business;
-=======
-import model.Model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.Enterprise.Enterprise;
 import model.Enterprise.NGOEnterprise;
 import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
@@ -24,15 +20,9 @@ import model.person.Person;
 import model.userAccounts.UserAccount;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-<<<<<<< HEAD
 import static utils.BusinessUtils.isValidEmail;
 import static utils.BusinessUtils.isValidPassword;
 import static utils.BusinessUtils.isValidPhoneNumber;
-=======
-import static utils.ModelUtils.isValidEmail;
-import static utils.ModelUtils.isValidPassword;
-import static utils.ModelUtils.isValidPhoneNumber;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.userAccounts.UserAccountDirectory;
 import utils.Neighbourhood;
 
@@ -42,36 +32,22 @@ import utils.Neighbourhood;
  */
 public class SignUpPatientsJPanel extends javax.swing.JPanel {
 
-<<<<<<< HEAD
     Business business;
-=======
-    Model model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     NGOEnterprise enterprise;
     NGOVolunteerOrganization organization;
     NGOVolunteerProfile currentAuthenticatedUser;
     UserAccount currentUser;
     /**
      * Creates new form SignUpPatientsJPanel
-<<<<<<< HEAD
      * @param business
-=======
-     * @param model
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
      * @param enterprise
      * @param organization
      * @param currentAuthenticatedUser
      * @param currentUser
      */
-<<<<<<< HEAD
     public SignUpPatientsJPanel(Business business, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         this.business = business;
-=======
-    public SignUpPatientsJPanel(Model model, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
-        initComponents();
-        this.model = model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -98,11 +74,7 @@ public class SignUpPatientsJPanel extends javax.swing.JPanel {
        DefaultComboBoxModel<BloodGroup> bloodGroups = new DefaultComboBoxModel<>(BloodGroup.values());
        bloodGroupDropDown.setModel(bloodGroups);
 
-<<<<<<< HEAD
         UserAccountDirectory patientList = this.business.getMasterPatientList();
-=======
-        UserAccountDirectory patientList = this.model.getMasterPatientList();
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         
         for(UserAccount account: patientList.getUserAccountList()) {
             System.out.println(account.getAssociatedProfile().getPerson().getFirstName() + "Name");
@@ -349,22 +321,14 @@ public class SignUpPatientsJPanel extends javax.swing.JPanel {
            return;
         }
         
-<<<<<<< HEAD
         boolean isExistingUser = business.isExistingUserByUserName(userName);
-=======
-        boolean isExistingUser = model.isExistingUserByUserName(userName);
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
             return;
         }
         
-<<<<<<< HEAD
         UserAccountDirectory masterPatientList = business.getMasterPatientList();
-=======
-        UserAccountDirectory masterPatientList = model.getMasterPatientList();
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         
         //Signup Patient
         Person p = new Person();

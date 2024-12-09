@@ -4,11 +4,7 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
-<<<<<<< HEAD
 import model.Business;
-=======
-import model.Model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.Enterprise.Enterprise;
 import model.Enterprise.NGOEnterprise;
 import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
@@ -18,7 +14,6 @@ import model.userAccounts.UserAccount;
 import model.userAccounts.UserAccountDirectory;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-<<<<<<< HEAD
 import utils.BusinessUtils;
 import static utils.BusinessUtils.isValidPhoneNumber;
 
@@ -29,18 +24,6 @@ import static utils.BusinessUtils.isValidPhoneNumber;
 public class UpdateSelfJPanel extends javax.swing.JPanel {
 
     Business business;
-=======
-import utils.ModelUtils;
-import static utils.ModelUtils.isValidPhoneNumber;
-
-/**
- *
- * @author tbhar
- */
-public class UpdateSelfJPanel extends javax.swing.JPanel {
-
-    Model model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     NGOEnterprise enterprise;
     NGOVolunteerOrganization organization;
     NGOVolunteerProfile currentAuthenticatedUser;
@@ -48,15 +31,9 @@ public class UpdateSelfJPanel extends javax.swing.JPanel {
     /**
      * Creates new form UpdateSelfJPanel
      */
-<<<<<<< HEAD
     public UpdateSelfJPanel(Business business, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         this.business = business;
-=======
-    public UpdateSelfJPanel(Model model, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
-        initComponents();
-        this.model = model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -375,11 +352,7 @@ public class UpdateSelfJPanel extends javax.swing.JPanel {
        }
         
        if(!password.isBlank()) {
-<<<<<<< HEAD
             if(!BusinessUtils.isValidPassword(password)) {
-=======
-            if(!ModelUtils.isValidPassword(password)) {
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
                 JOptionPane.showMessageDialog(this, "Invalid Password!");
                 return;
             }

@@ -4,11 +4,7 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOAdmin;
 
-<<<<<<< HEAD
 import model.Business;
-=======
-import model.Model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.Enterprise.Enterprise;
 import model.Enterprise.NGOEnterprise;
 import model.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
@@ -28,11 +24,7 @@ import javax.swing.JPanel;
 public class NGOAdminJPanel extends javax.swing.JPanel {
 
     JPanel UserMainContainer;
-<<<<<<< HEAD
     Business business;
-=======
-    Model model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     NGOEnterprise enterprise;
     NGOAdministrationOrganization organization;
     NGOSupervisorProfile currentAuthenticatedUser;
@@ -41,19 +33,11 @@ public class NGOAdminJPanel extends javax.swing.JPanel {
      * Creates new form NGOAdminJPanel
      * @param UserMainContainer
      */
-<<<<<<< HEAD
     public NGOAdminJPanel(JPanel UserMainContainer, Business business, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         DisplayDateAndTime();
         this.UserMainContainer = UserMainContainer;
         this.business = business;
-=======
-    public NGOAdminJPanel(JPanel UserMainContainer, Model model, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
-        initComponents();
-        DisplayDateAndTime();
-        this.UserMainContainer = UserMainContainer;
-        this.model = model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -170,21 +154,13 @@ public class NGOAdminJPanel extends javax.swing.JPanel {
 
     private void btnManageVolunteersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageVolunteersActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
         ManageNGOVolunteersJPanel manageNGOVolunteers = new ManageNGOVolunteersJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
-=======
-        ManageNGOVolunteersJPanel manageNGOVolunteers = new ManageNGOVolunteersJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         ngoAdminSplitPane.setRightComponent(manageNGOVolunteers);
     }//GEN-LAST:event_btnManageVolunteersActionPerformed
 
     private void btnAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalyticsActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
         ViewAnalyticsJPanel viewAnalytics = new ViewAnalyticsJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
-=======
-        ViewAnalyticsJPanel viewAnalytics = new ViewAnalyticsJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         ngoAdminSplitPane.setRightComponent(viewAnalytics);
     }//GEN-LAST:event_btnAnalyticsActionPerformed
 

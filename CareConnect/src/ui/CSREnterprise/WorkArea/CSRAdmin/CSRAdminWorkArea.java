@@ -4,11 +4,7 @@
  */
 package ui.CSREnterprise.WorkArea.CSRAdmin;
 
-<<<<<<< HEAD
 import model.Business;
-=======
-import model.Model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.CSREnterprise.CSRAdministration.CSRAdminProfile;
 import model.Enterprise.CSREnterprise;
 import model.Enterprise.Enterprise;
@@ -29,28 +25,16 @@ public class CSRAdminWorkArea extends javax.swing.JPanel {
      * Creates new form CSRSupervisorJPanel
      */
     JPanel UserMainContainer;
-<<<<<<< HEAD
     Business business;
-=======
-    Model model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     CSREnterprise enterprise;
     CSRAdministrationOrganization organization;
     CSRAdminProfile currentAuthenticatedUser;
     UserAccount currentUser;
-<<<<<<< HEAD
     public CSRAdminWorkArea(JPanel UserMainContainer, Business business, CSREnterprise enterprise, CSRAdministrationOrganization organization, CSRAdminProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
         this.business = business;
-=======
-    public CSRAdminWorkArea(JPanel UserMainContainer, Model model, CSREnterprise enterprise, CSRAdministrationOrganization organization, CSRAdminProfile currentAuthenticatedUser, UserAccount currentUser) {
-        initComponents();
-        
-        this.UserMainContainer = UserMainContainer;
-        this.model = model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -164,21 +148,13 @@ public class CSRAdminWorkArea extends javax.swing.JPanel {
 
     private void btnManageProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageProfileActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
         CSRAdminManageProfileJPanel manageProfilePanel = new CSRAdminManageProfileJPanel(business, enterprise, organization, currentAuthenticatedUser, currentUser);
-=======
-        CSRAdminManageProfileJPanel manageProfilePanel = new CSRAdminManageProfileJPanel(model, enterprise, organization, currentAuthenticatedUser, currentUser);
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         csrAdminSplitPane.setRightComponent(manageProfilePanel);
     }//GEN-LAST:event_btnManageProfileActionPerformed
 
     private void btnManageEmployersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmployersActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
         ManageEmployerJPanel manageEmployers = new ManageEmployerJPanel(business, enterprise, organization, currentAuthenticatedUser, currentUser);
-=======
-        ManageEmployerJPanel manageEmployers = new ManageEmployerJPanel(model, enterprise, organization, currentAuthenticatedUser, currentUser);
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         csrAdminSplitPane.setRightComponent(manageEmployers);
     }//GEN-LAST:event_btnManageEmployersActionPerformed
 

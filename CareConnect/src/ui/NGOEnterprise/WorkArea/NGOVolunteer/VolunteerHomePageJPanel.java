@@ -4,11 +4,7 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
-<<<<<<< HEAD
 import model.Business;
-=======
-import model.Model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.Enterprise.Enterprise;
 import model.Enterprise.NGOEnterprise;
 import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
@@ -24,11 +20,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class VolunteerHomePageJPanel extends javax.swing.JPanel {
 
-<<<<<<< HEAD
     Business business;
-=======
-    Model model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     NGOEnterprise enterprise;
     NGOVolunteerOrganization organization;
     NGOVolunteerProfile currentAuthenticatedUser;
@@ -36,15 +28,9 @@ public class VolunteerHomePageJPanel extends javax.swing.JPanel {
     /**
      * Creates new form VolunteerHomePageJPanel
      */
-<<<<<<< HEAD
     public VolunteerHomePageJPanel(Business business, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         this.business = business;
-=======
-    public VolunteerHomePageJPanel(Model model, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
-        initComponents();
-        this.model = model;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

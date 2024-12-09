@@ -4,7 +4,6 @@
  */
 package ui.SignUp;
 
-<<<<<<< HEAD
 import model.Business;
 import model.Enterprise.Enterprise;
 import model.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
@@ -14,17 +13,6 @@ import model.person.Ethnicity;
 import model.person.Gender;
 import model.person.Person;
 import model.userAccounts.UserAccount;
-=======
-import business.Business;
-import business.Enterprise.Enterprise;
-import business.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
-import business.Organization.Organization;
-import business.Patient.PatientProfile;
-import business.person.Ethnicity;
-import business.person.Gender;
-import business.person.Person;
-import business.userAccounts.UserAccount;
->>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import static utils.BusinessUtils.isValidEmail;
