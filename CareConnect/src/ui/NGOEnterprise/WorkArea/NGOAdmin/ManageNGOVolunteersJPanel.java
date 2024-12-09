@@ -4,14 +4,14 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOAdmin;
 
-import business.Business;
-import business.Enterprise.Enterprise;
-import business.Enterprise.NGOEnterprise;
-import business.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
-import business.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
-import business.Organization.NGOAdministrationOrganization;
-import business.Organization.Organization;
-import business.userAccounts.UserAccount;
+import model.Model;
+import model.Enterprise.Enterprise;
+import model.Enterprise.NGOEnterprise;
+import model.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
+import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
+import model.Organization.NGOAdministrationOrganization;
+import model.Organization.Organization;
+import model.userAccounts.UserAccount;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import utils.Neighbourhood;
  */
 public class ManageNGOVolunteersJPanel extends javax.swing.JPanel {
 
-    Business business;
+    Model model;
     NGOEnterprise enterprise;
     NGOAdministrationOrganization organization;
     NGOSupervisorProfile currentAuthenticatedUser;
@@ -37,9 +37,9 @@ public class ManageNGOVolunteersJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageNGOVolunteersJPanel
      */
-    public ManageNGOVolunteersJPanel(Business business, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ManageNGOVolunteersJPanel(Model model, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

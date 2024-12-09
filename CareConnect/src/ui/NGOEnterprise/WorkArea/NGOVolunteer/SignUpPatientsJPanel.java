@@ -4,26 +4,26 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
-import business.Business;
-import business.Enterprise.Enterprise;
-import business.Enterprise.NGOEnterprise;
-import business.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
-import business.Organization.NGOAdministrationOrganization;
-import business.Organization.NGOVolunteerOrganization;
-import business.Organization.Organization;
-import business.Patient.BloodGroup;
-import business.Patient.Issue;
-import business.Patient.PatientProfile;
-import business.person.Ethnicity;
-import business.person.Gender;
-import business.person.Person;
-import business.userAccounts.UserAccount;
+import model.Model;
+import model.Enterprise.Enterprise;
+import model.Enterprise.NGOEnterprise;
+import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
+import model.Organization.NGOAdministrationOrganization;
+import model.Organization.NGOVolunteerOrganization;
+import model.Organization.Organization;
+import model.Patient.BloodGroup;
+import model.Patient.Issue;
+import model.Patient.PatientProfile;
+import model.person.Ethnicity;
+import model.person.Gender;
+import model.person.Person;
+import model.userAccounts.UserAccount;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import static utils.BusinessUtils.isValidEmail;
-import static utils.BusinessUtils.isValidPassword;
-import static utils.BusinessUtils.isValidPhoneNumber;
-import business.userAccounts.UserAccountDirectory;
+import static utils.ModelUtils.isValidEmail;
+import static utils.ModelUtils.isValidPassword;
+import static utils.ModelUtils.isValidPhoneNumber;
+import model.userAccounts.UserAccountDirectory;
 import utils.Neighbourhood;
 
 /**
@@ -32,22 +32,22 @@ import utils.Neighbourhood;
  */
 public class SignUpPatientsJPanel extends javax.swing.JPanel {
 
-    Business business;
+    Model model;
     NGOEnterprise enterprise;
     NGOVolunteerOrganization organization;
     NGOVolunteerProfile currentAuthenticatedUser;
     UserAccount currentUser;
     /**
      * Creates new form SignUpPatientsJPanel
-     * @param business
+     * @param model
      * @param enterprise
      * @param organization
      * @param currentAuthenticatedUser
      * @param currentUser
      */
-    public SignUpPatientsJPanel(Business business, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public SignUpPatientsJPanel(Model model, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -74,7 +74,7 @@ public class SignUpPatientsJPanel extends javax.swing.JPanel {
        DefaultComboBoxModel<BloodGroup> bloodGroups = new DefaultComboBoxModel<>(BloodGroup.values());
        bloodGroupDropDown.setModel(bloodGroups);
 
-        UserAccountDirectory patientList = this.business.getMasterPatientList();
+        UserAccountDirectory patientList = this.model.getMasterPatientList();
         
         for(UserAccount account: patientList.getUserAccountList()) {
             System.out.println(account.getAssociatedProfile().getPerson().getFirstName() + "Name");
@@ -321,14 +321,14 @@ public class SignUpPatientsJPanel extends javax.swing.JPanel {
            return;
         }
         
-        boolean isExistingUser = business.isExistingUserByUserName(userName);
+        boolean isExistingUser = model.isExistingUserByUserName(userName);
         
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
             return;
         }
         
-        UserAccountDirectory masterPatientList = business.getMasterPatientList();
+        UserAccountDirectory masterPatientList = model.getMasterPatientList();
         
         //Signup Patient
         Person p = new Person();

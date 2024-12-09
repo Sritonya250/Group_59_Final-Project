@@ -4,14 +4,14 @@
  */
 package ui.CSREnterprise.WorkArea.CSRAdmin;
 
-import business.Business;
-import business.CSREnterprise.CSRAdministration.CSRAdminProfile;
-import business.Enterprise.CSREnterprise;
-import business.Enterprise.Enterprise;
-import business.Organization.CSRAdministrationOrganization;
-import business.Organization.Organization;
-import business.ShelterEnterprise.ShelterNurseStation.ShelterNurseProfile;
-import business.userAccounts.UserAccount;
+import model.Model;
+import model.CSREnterprise.CSRAdministration.CSRAdminProfile;
+import model.Enterprise.CSREnterprise;
+import model.Enterprise.Enterprise;
+import model.Organization.CSRAdministrationOrganization;
+import model.Organization.Organization;
+import model.ShelterEnterprise.ShelterNurseStation.ShelterNurseProfile;
+import model.userAccounts.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -25,16 +25,16 @@ public class CSRAdminWorkArea extends javax.swing.JPanel {
      * Creates new form CSRSupervisorJPanel
      */
     JPanel UserMainContainer;
-    Business business;
+    Model model;
     CSREnterprise enterprise;
     CSRAdministrationOrganization organization;
     CSRAdminProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public CSRAdminWorkArea(JPanel UserMainContainer, Business business, CSREnterprise enterprise, CSRAdministrationOrganization organization, CSRAdminProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public CSRAdminWorkArea(JPanel UserMainContainer, Model model, CSREnterprise enterprise, CSRAdministrationOrganization organization, CSRAdminProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -148,13 +148,13 @@ public class CSRAdminWorkArea extends javax.swing.JPanel {
 
     private void btnManageProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageProfileActionPerformed
         // TODO add your handling code here:
-        CSRAdminManageProfileJPanel manageProfilePanel = new CSRAdminManageProfileJPanel(business, enterprise, organization, currentAuthenticatedUser, currentUser);
+        CSRAdminManageProfileJPanel manageProfilePanel = new CSRAdminManageProfileJPanel(model, enterprise, organization, currentAuthenticatedUser, currentUser);
         csrAdminSplitPane.setRightComponent(manageProfilePanel);
     }//GEN-LAST:event_btnManageProfileActionPerformed
 
     private void btnManageEmployersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmployersActionPerformed
         // TODO add your handling code here:
-        ManageEmployerJPanel manageEmployers = new ManageEmployerJPanel(business, enterprise, organization, currentAuthenticatedUser, currentUser);
+        ManageEmployerJPanel manageEmployers = new ManageEmployerJPanel(model, enterprise, organization, currentAuthenticatedUser, currentUser);
         csrAdminSplitPane.setRightComponent(manageEmployers);
     }//GEN-LAST:event_btnManageEmployersActionPerformed
 

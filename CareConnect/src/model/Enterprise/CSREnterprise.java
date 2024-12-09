@@ -4,6 +4,9 @@
  */
 package model.Enterprise;
 
+import model.Profile.UserRole;
+import model.csr.OpportunityDirectory;
+
 /**
  *
  * @author tbhar

@@ -4,18 +4,18 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
-import business.Business;
-import business.Enterprise.Enterprise;
-import business.Enterprise.NGOEnterprise;
-import business.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
-import business.Organization.NGOVolunteerOrganization;
-import business.Organization.Organization;
-import business.userAccounts.UserAccount;
-import business.userAccounts.UserAccountDirectory;
+import model.Model;
+import model.Enterprise.Enterprise;
+import model.Enterprise.NGOEnterprise;
+import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
+import model.Organization.NGOVolunteerOrganization;
+import model.Organization.Organization;
+import model.userAccounts.UserAccount;
+import model.userAccounts.UserAccountDirectory;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import utils.BusinessUtils;
-import static utils.BusinessUtils.isValidPhoneNumber;
+import utils.ModelUtils;
+import static utils.ModelUtils.isValidPhoneNumber;
 
 /**
  *
@@ -23,7 +23,7 @@ import static utils.BusinessUtils.isValidPhoneNumber;
  */
 public class UpdateSelfJPanel extends javax.swing.JPanel {
 
-    Business business;
+    Model model;
     NGOEnterprise enterprise;
     NGOVolunteerOrganization organization;
     NGOVolunteerProfile currentAuthenticatedUser;
@@ -31,9 +31,9 @@ public class UpdateSelfJPanel extends javax.swing.JPanel {
     /**
      * Creates new form UpdateSelfJPanel
      */
-    public UpdateSelfJPanel(Business business, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public UpdateSelfJPanel(Model model, NGOEnterprise enterprise, NGOVolunteerOrganization organization, NGOVolunteerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -352,7 +352,7 @@ public class UpdateSelfJPanel extends javax.swing.JPanel {
        }
         
        if(!password.isBlank()) {
-            if(!BusinessUtils.isValidPassword(password)) {
+            if(!ModelUtils.isValidPassword(password)) {
                 JOptionPane.showMessageDialog(this, "Invalid Password!");
                 return;
             }

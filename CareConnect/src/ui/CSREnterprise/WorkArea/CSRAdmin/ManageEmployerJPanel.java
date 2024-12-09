@@ -4,13 +4,13 @@
  */
 package ui.CSREnterprise.WorkArea.CSRAdmin;
 
-import business.Business;
-import business.CSREnterprise.CSRAdministration.CSRAdminProfile;
-import business.CSREnterprise.CSREmployer.CSREmployerProfile;
-import business.Enterprise.CSREnterprise;
-import business.Organization.CSRAdministrationOrganization;
-import business.Organization.Organization;
-import business.userAccounts.UserAccount;
+import model.Model;
+import model.CSREnterprise.CSRAdministration.CSRAdminProfile;
+import model.CSREnterprise.CSREmployer.CSREmployerProfile;
+import model.Enterprise.CSREnterprise;
+import model.Organization.CSRAdministrationOrganization;
+import model.Organization.Organization;
+import model.userAccounts.UserAccount;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -24,15 +24,15 @@ public class ManageEmployerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageEmployerJPanel
      */
-    Business business;
+    Model model;
     CSREnterprise enterprise;
     CSRAdministrationOrganization organization;
     CSRAdminProfile currentAuthenticatedUser;
     UserAccount currentUser;
     UserAccount selectedEmployerUser;
-    public ManageEmployerJPanel(Business business, CSREnterprise enterprise, CSRAdministrationOrganization organization, CSRAdminProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ManageEmployerJPanel(Model model, CSREnterprise enterprise, CSRAdministrationOrganization organization, CSRAdminProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

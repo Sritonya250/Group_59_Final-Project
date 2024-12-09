@@ -4,13 +4,13 @@
  */
 package ui.CSREnterprise.WorkArea.CSREmployer;
 
-import business.Business;
-import business.CSREnterprise.CSREmployer.CSREmployerProfile;
-import business.Enterprise.CSREnterprise;
-import business.Organization.CSREmployerOrganization;
-import business.csr.Opportunity;
-import business.shelter.EmployableSkills;
-import business.userAccounts.UserAccount;
+import model.Model;
+import model.CSREnterprise.CSREmployer.CSREmployerProfile;
+import model.Enterprise.CSREnterprise;
+import model.Organization.CSREmployerOrganization;
+import model.csr.Opportunity;
+import model.shelter.EmployableSkills;
+import model.userAccounts.UserAccount;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -23,15 +23,15 @@ public class CreateOpportunity extends javax.swing.JPanel {
     /**
      * Creates new form CreateOpportunity
      */
-    Business business;
+    Model model;
     CSREnterprise enterprise;
     CSREmployerOrganization organization;
     CSREmployerProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public CreateOpportunity(Business business, CSREnterprise enterprise, CSREmployerOrganization organization, CSREmployerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public CreateOpportunity(Model model, CSREnterprise enterprise, CSREmployerOrganization organization, CSREmployerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
-        this.business = business;
+        this.model = model;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
