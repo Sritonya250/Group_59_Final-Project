@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UserInterface.NGOEnterprise.WorkArea.NGOVolunteer;
+package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
 import business.Business;
 import business.Enterprise.Enterprise;

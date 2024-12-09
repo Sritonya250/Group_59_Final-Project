@@ -1,4 +1,4 @@
-package UserInterface.NGOEnterprise.WorkArea.NGOVolunteer;
+package ui.NGOEnterprise.WorkArea.NGOVolunteer;
 
 import business.Business;
 import business.Enterprise.Enterprise;
