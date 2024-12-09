@@ -4,6 +4,10 @@
  */
 package model.Enterprise;
 
+import model.Organization.Organization;
+import model.csr.OpportunityDirectory;
+import model.profile.UserRole;
+
 /**
  *
  * @author tbhar

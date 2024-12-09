@@ -5,7 +5,7 @@
 package ui;
 
 import ui.SignIn.SignInJPanel;
-import model.Model;
+import model.Business;
 import java.awt.CardLayout;
 
 /**
@@ -17,16 +17,16 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    Model model;
+    Business business;
     public MainJFrame() {
         initComponents();
         
-        model = new Model("CareConnect Ecosystem");
+        business = new Business("Pheonix Ecosystem");
         renderLoginPage();
     }
     
     public void renderLoginPage() {
-        SignInJPanel signInPanel = new SignInJPanel(UserMainContainer, model);
+        SignInJPanel signInPanel = new SignInJPanel(UserMainContainer, business);
         UserMainContainer.add("SignInPanel",signInPanel);
         CardLayout layout = (CardLayout) UserMainContainer.getLayout();
         layout.next(UserMainContainer);
@@ -44,7 +44,6 @@ public class MainJFrame extends javax.swing.JFrame {
         UserMainContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 204, 204));
 
         UserMainContainer.setLayout(new java.awt.CardLayout());
 
@@ -52,11 +51,11 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(UserMainContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
+            .addComponent(UserMainContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(UserMainContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+            .addComponent(UserMainContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

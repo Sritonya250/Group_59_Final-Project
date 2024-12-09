@@ -4,6 +4,10 @@
  */
 package model.CSREnterprise.CSRAdministration;
 
+import model.person.Person;
+import model.profile.Profile;
+import model.profile.UserRole;
+
 /**
  *
  * @author tbhar

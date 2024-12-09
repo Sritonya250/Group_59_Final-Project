@@ -32,17 +32,17 @@ import utils.Neighbourhood;
  *
  * @author Monisha Narendran
  */
-public class Model {
+public class Business {
     String name;
     UserAccountDirectory masterPatientList;
     EnterpriseCatalog enterpriseCatalog;
 
-    public Model(String name) {
+    public Business(String name) {
         this.name = name;
-        initializeModel();
+        initializeBusiness();
     }
     
-    public void initializeModel(){
+    public void initializeBusiness(){
         //Initialize
         this.masterPatientList = new UserAccountDirectory();
         this.enterpriseCatalog = new EnterpriseCatalog();
@@ -85,47 +85,47 @@ public class Model {
         
         //NGO_Administrator
         Person p1 = new Person();
-        p1.setFirstName("Arun");
-        p1.setLastName("Kumar");
+        p1.setFirstName("Akarsh");
+        p1.setLastName("Shroff");
         p1.setGender(Gender.MALE);
         p1.setEthnicity(Ethnicity.ASIAN);
         p1.setAge(23);
-        p1.setPhoneNum("9838466759");
-        p1.setEmail("arun.kumar@gmail.com");
-        p1.setAddress("344, Mass Ave");
+        p1.setPhoneNum("8573977239");
+        p1.setEmail("shroff.akarsh@gmail.com");
+        p1.setAddress("150, Mass Ave");
         
         NGOSupervisorProfile ngoSupervisor = new NGOSupervisorProfile(p1);
         
-        ngoAdministration.getOrganizationUserDirectory().createUserAccount(ngoSupervisor, "kumar", "ak24$", true);
+        ngoAdministration.getOrganizationUserDirectory().createUserAccount(ngoSupervisor, "shroff", "pass@1", true);
         
          Person p7 = new Person();
-        p7.setFirstName("Lokesh");
-        p7.setLastName("Dev");
+        p7.setFirstName("Super Test");
+        p7.setLastName("Last Test");
         p7.setGender(Gender.MALE);
         p7.setEthnicity(Ethnicity.ASIAN);
         p7.setAge(29);
-        p7.setPhoneNum("7652431789");
-        p7.setEmail("lokesh.dev@gmail.com");
+        p7.setPhoneNum("1284120489");
+        p7.setEmail("testing.akarsh@gmail.com");
         p7.setAddress("499, Rox Ave");
         
         NGOSupervisorProfile ngoSupervisor1 = new NGOSupervisorProfile(p7);
         
-        ngoAdministration.getOrganizationUserDirectory().createUserAccount(ngoSupervisor1, "dev", "lv24$", true);
+        ngoAdministration.getOrganizationUserDirectory().createUserAccount(ngoSupervisor1, "testSuper", "pass@1", true);
         
         //Shelter_Administrator
         Person p2 = new Person();
-        p2.setFirstName("Swetha");
-        p2.setLastName("Murugan");
+        p2.setFirstName("Shriya");
+        p2.setLastName("Shankar");
         p2.setGender(Gender.FEMALE);
         p2.setEthnicity(Ethnicity.ASIAN);
         p2.setAge(23);
-        p2.setPhoneNum("8979765432");
-        p2.setEmail("swetha.murugan@gmail.com");
+        p2.setPhoneNum("8573977239");
+        p2.setEmail("shankar.shriya@gmail.com");
         p2.setAddress("150, Mass Ave");
         
         ShelterSupervisorProfile shelterSupervisor = new ShelterSupervisorProfile(p2);
         
-        shelterAdministration.getOrganizationUserDirectory().createUserAccount(shelterSupervisor, "murugan", "sv24$", true);
+        shelterAdministration.getOrganizationUserDirectory().createUserAccount(shelterSupervisor, "shankar", "pass@1", true);
         
         //Clinic_Staff
 //        Person p3 = new Person();
@@ -144,35 +144,35 @@ public class Model {
         
         //CSR_Admin
         Person p4 = new Person();
-        p4.setFirstName("Tonya");
-        p4.setLastName("Lakshmi");
+        p4.setFirstName("Ruchika");
+        p4.setLastName("Shashidhara");
         p4.setGender(Gender.FEMALE);
         p4.setEthnicity(Ethnicity.WHITE_CAUCASIAN);
         p4.setAge(23);
-        p4.setPhoneNum("9087657689");
-        p4.setEmail("tonya.lakshmi@gmail.com");
-        p4.setAddress("190, Mass Ave");
+        p4.setPhoneNum("8573977239");
+        p4.setEmail("shashidhara.ruchika@gmail.com");
+        p4.setAddress("150, Mass Ave");
         
         CSRAdminProfile csrAdmin = new CSRAdminProfile(p4);
                 
-        csrAdministration.getOrganizationUserDirectory().createUserAccount(csrAdmin, "lakshmi", "tl24$", true);
+        csrAdministration.getOrganizationUserDirectory().createUserAccount(csrAdmin, "shashidhara", "pass@1", true);
         
         //Delete these user after testing
         //NGO Volunteer 1
         Person p5 = new Person();
-        p5.setFirstName("Mannu");
-        p5.setLastName("Shinde");
+        p5.setFirstName("Sanike");
+        p5.setLastName("Patne");
         p5.setGender(Gender.MALE);
         p5.setEthnicity(Ethnicity.HISPANIC_LATINO);
         p5.setAge(25);
-        p5.setPhoneNum("7654892063");
-        p5.setEmail("mannu.shinde@gmail.com");
-        p5.setAddress("121, Mass Ave");
+        p5.setPhoneNum("1234567891");
+        p5.setEmail("patne.sanike@gmail.com");
+        p5.setAddress("150, Mass Ave");
         
         NGOVolunteerProfile patient = new NGOVolunteerProfile(p5);
         patient.setAssignedNeighbourhood(Neighbourhood.ALLSTON_BRIGHTON);
         
-        UserAccount ngoVolunteerUser = ngoVolunteer.getOrganizationUserDirectory().createUserAccount(patient, "shinde", "ms24$", true);
+        UserAccount ngoVolunteerUser = ngoVolunteer.getOrganizationUserDirectory().createUserAccount(patient, "patne", "pass@1", true);
         
         Person p6 = new Person();
         p6.setFirstName("Testing");
@@ -236,14 +236,14 @@ public class Model {
         UserAccount staffUser = clinicAdministration.getOrganizationUserDirectory().createUserAccount(staff1, "staff1", "pass@1", true);
         
           Person p11 = new Person();
-        p11.setFirstName("Doc Sri");
-        p11.setLastName("Kumar");
+        p11.setFirstName("Doc Rama");
+        p11.setLastName("Nadha");
         p1.setGender(Gender.MALE);
         p11.setEthnicity(Ethnicity.MIDDLE_EASTERN_NORTH_AFRICAN);
         p11.setAge(29);
-        p11.setPhoneNum("9876543216");
+        p11.setPhoneNum("8910203");
         p11.setEmail("doc.volunteer@gmail.com");
-        p11.setAddress("290, Hunt Ave");
+        p11.setAddress("310, Hunt Ave");
         
         ClinicDoctorProfile doc1 = new ClinicDoctorProfile(p11);
         doc1.setSpecalization(DoctorSpecalization.PEDIATRICIAN);
@@ -251,12 +251,12 @@ public class Model {
         UserAccount docUser1 = clinicDoctors.getOrganizationUserDirectory().createUserAccount(doc1, "doc1", "pass@1", true);
         
          Person p12 = new Person();
-        p12.setFirstName("Doctor Radha");
-        p12.setLastName("Krishnan");
+        p12.setFirstName("Doctor Sita");
+        p12.setLastName("Devi");
         p12.setGender(Gender.FEMALE);
         p12.setEthnicity(Ethnicity.MIDDLE_EASTERN_NORTH_AFRICAN);
         p12.setAge(22);
-        p12.setPhoneNum("9876543216");
+        p12.setPhoneNum("8910203");
         p12.setEmail("doc2.volunteer@gmail.com");
         p12.setAddress("Good Shepard Ave");
         

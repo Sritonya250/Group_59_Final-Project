@@ -4,7 +4,7 @@
  */
 package ui.ClinicEnterprise.WorkArea.ClinicStaff;
 
-import model.Model;
+import model.Business;
 import model.ClinicEnterprise.ClinicAdministration.ClinicStaffProfile;
 import model.ClinicEnterprise.ClinicDoctor.ClinicDoctorProfile;
 import model.Enterprise.ClinicEnterprise;
@@ -21,11 +21,11 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Monisha Narendran
+ * @author  Monisha Narendran
  */
 public class ClinicManageDoctors extends javax.swing.JPanel {
 
-    Model model;
+    Business business;
     ClinicEnterprise enterprise;
     ClinicAdministrationOrganization organization;
     ClinicStaffProfile currentAuthenticatedUser;
@@ -34,9 +34,9 @@ public class ClinicManageDoctors extends javax.swing.JPanel {
     /**
      * Creates new form ClinicManageDoctors
      */
-    public ClinicManageDoctors(Model model, ClinicEnterprise enterprise, ClinicAdministrationOrganization organization, ClinicStaffProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ClinicManageDoctors(Business business, ClinicEnterprise enterprise, ClinicAdministrationOrganization organization, ClinicStaffProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

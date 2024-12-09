@@ -4,7 +4,7 @@
  */
 package ui.SignUp;
 
-import model.Model;
+import model.Business;
 import model.ClinicEnterprise.ClinicDoctor.ClinicDoctorProfile;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
@@ -16,9 +16,9 @@ import model.userAccounts.UserAccount;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import static utils.ModelUtils.isValidEmail;
-import static utils.ModelUtils.isValidPassword;
-import static utils.ModelUtils.isValidPhoneNumber;
+import static utils.BusinessUtils.isValidEmail;
+import static utils.BusinessUtils.isValidPassword;
+import static utils.BusinessUtils.isValidPhoneNumber;
 
 /**
  *
@@ -27,14 +27,14 @@ import static utils.ModelUtils.isValidPhoneNumber;
 public class ClinicDoctorJPanel extends javax.swing.JPanel {
 
     JPanel UserMainContainer;
-    Model model;
+    Business business;
     /**
      * Creates new form ClinicDoctorJPanel
      */
-    public ClinicDoctorJPanel(JPanel UserMainContainer, Model model) {
+    public ClinicDoctorJPanel(JPanel UserMainContainer, Business business) {
         initComponents();
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         
         populateDropDowns();
     }
@@ -158,11 +158,6 @@ public class ClinicDoctorJPanel extends javax.swing.JPanel {
         jLabel9.setText("Specalization:");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
 
-        specalizationDropDown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                specalizationDropDownActionPerformed(evt);
-            }
-        });
         add(specalizationDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -247,7 +242,7 @@ public class ClinicDoctorJPanel extends javax.swing.JPanel {
             return;
         }
 
-        boolean isExistingUser = model.isExistingUserByUserName(userName);
+        boolean isExistingUser = business.isExistingUserByUserName(userName);
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -275,7 +270,7 @@ public class ClinicDoctorJPanel extends javax.swing.JPanel {
         ClinicDoctorProfile clinicDoctor = new ClinicDoctorProfile(p);
         clinicDoctor.setSpecalization(selectedSpecialization);
 
-        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(clinicDoctor.getRole());
+        Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(clinicDoctor.getRole());
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(clinicDoctor.getRole());
 
         UserAccount clinicDoctorUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(clinicDoctor, userName, password, true);
@@ -291,10 +286,6 @@ public class ClinicDoctorJPanel extends javax.swing.JPanel {
         txtPassword.setText("");
         spinnerAge.setValue(0);
     }//GEN-LAST:event_btnRegisterActionPerformed
-
-    private void specalizationDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specalizationDropDownActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_specalizationDropDownActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

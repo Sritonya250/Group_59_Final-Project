@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package business.Organization;
+package model.Organization;
 
-import business.userAccounts.UserAccountDirectory;
+import model.userAccounts.UserAccountDirectory;
 
 /**
  *
- * @author nagal
+ * @author Monisha Narendran
  */
 public abstract class Organization {
     private static int organizationCount = 0;

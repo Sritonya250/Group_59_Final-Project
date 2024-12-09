@@ -9,7 +9,7 @@ import model.profile.Profile;
 import model.profile.UserRole;
 import java.util.ArrayList;
 import java.util.List;
-import utils.ModelUtils;
+import utils.BusinessUtils;
 
 /**
  *
@@ -58,7 +58,7 @@ public class UserAccount {
     }
 
     public void setPasswordList(String password) {
-        String encrypedPassword = ModelUtils.encryptPassword(password);
+        String encrypedPassword = BusinessUtils.encryptPassword(password);
         this.passwordList.add(encrypedPassword);
     }
 
@@ -96,7 +96,7 @@ public class UserAccount {
 
     public boolean isValidUser(String un, String pwd) {
         String latestPassword = getCurrentPassword();
-        if(username.equals(un) && ModelUtils.verifyPassword(latestPassword, pwd)) {
+        if(username.equals(un) && BusinessUtils.verifyPassword(latestPassword, pwd)) {
             return true;
         }
         return false;
@@ -113,7 +113,7 @@ public class UserAccount {
     public boolean setPasswordHash(String newPassword) {
         //true - set the password successfully
         //false - count not set the password successfully
-        String newPasswordHash = ModelUtils.encryptPassword(newPassword);
+        String newPasswordHash = BusinessUtils.encryptPassword(newPassword);
 
         if(this.passwordList.size() == 0){
             //new user setting password for the first time

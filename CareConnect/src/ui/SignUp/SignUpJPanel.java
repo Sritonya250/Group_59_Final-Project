@@ -4,7 +4,7 @@
  */
 package ui.SignUp;
 
-import model.Model;
+import model.Business;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -18,12 +18,12 @@ public class SignUpJPanel extends javax.swing.JPanel {
      * Creates new form SignUpJPanel
      */
     private JPanel UserMainContainer;
-    Model model;
+    Business business;
     
-    public SignUpJPanel(JPanel UserMainContainer, Model model) {
+    public SignUpJPanel(JPanel UserMainContainer, Business business) {
         initComponents();
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
     }
 
     /**
@@ -191,7 +191,7 @@ public class SignUpJPanel extends javax.swing.JPanel {
 
     private void btnNGOSupervisorSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNGOSupervisorSignUpActionPerformed
         // TODO add your handling code here:
-        NGOSupervisorSignUpJPanel ngoSupervisorSignUpPanel = new NGOSupervisorSignUpJPanel(UserMainContainer, model);
+        NGOSupervisorSignUpJPanel ngoSupervisorSignUpPanel = new NGOSupervisorSignUpJPanel(UserMainContainer, business);
         signUpSplitPane.setRightComponent(ngoSupervisorSignUpPanel);
     }//GEN-LAST:event_btnNGOSupervisorSignUpActionPerformed
 
@@ -204,49 +204,49 @@ public class SignUpJPanel extends javax.swing.JPanel {
 
     private void btnNGOVolunteerSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNGOVolunteerSignUpActionPerformed
         // TODO add your handling code here:
-        NGOVolunteerSignUpJPanel ngoVolunteerSignUpPanel = new NGOVolunteerSignUpJPanel(UserMainContainer, model);
+        NGOVolunteerSignUpJPanel ngoVolunteerSignUpPanel = new NGOVolunteerSignUpJPanel(UserMainContainer, business);
         signUpSplitPane.setRightComponent(ngoVolunteerSignUpPanel);
     }//GEN-LAST:event_btnNGOVolunteerSignUpActionPerformed
 
     private void btnShelterSupervisorSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShelterSupervisorSignUpActionPerformed
         // TODO add your handling code here:
-        ShelterSupervisorSignUpJPanel shelterSupervisorSignUpPanel = new ShelterSupervisorSignUpJPanel(UserMainContainer, model);
+        ShelterSupervisorSignUpJPanel shelterSupervisorSignUpPanel = new ShelterSupervisorSignUpJPanel(UserMainContainer, business);
         signUpSplitPane.setRightComponent(shelterSupervisorSignUpPanel);
     }//GEN-LAST:event_btnShelterSupervisorSignUpActionPerformed
 
     private void btnShelterNurseSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShelterNurseSignUpActionPerformed
         // TODO add your handling code here:
-        ShelterNurseSignUpJPanel shelterNurseSignUpPanel = new ShelterNurseSignUpJPanel(UserMainContainer, model);
+        ShelterNurseSignUpJPanel shelterNurseSignUpPanel = new ShelterNurseSignUpJPanel(UserMainContainer, business);
         signUpSplitPane.setRightComponent(shelterNurseSignUpPanel);
     }//GEN-LAST:event_btnShelterNurseSignUpActionPerformed
 
     private void btnTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainerActionPerformed
         // TODO add your handling code here:
-        ShelterTrainerSignUpJPanel shelterTrainerSignUpPanel = new ShelterTrainerSignUpJPanel(UserMainContainer, model);
+        ShelterTrainerSignUpJPanel shelterTrainerSignUpPanel = new ShelterTrainerSignUpJPanel(UserMainContainer, business);
         signUpSplitPane.setRightComponent(shelterTrainerSignUpPanel);
     }//GEN-LAST:event_btnTrainerActionPerformed
 
     private void btnClinicStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClinicStaffActionPerformed
         // TODO add your handling code here:
-        ClinicStaffSignUpJPanel clinicStaff = new ClinicStaffSignUpJPanel(UserMainContainer, model);
+        ClinicStaffSignUpJPanel clinicStaff = new ClinicStaffSignUpJPanel(UserMainContainer, business);
         signUpSplitPane.setRightComponent(clinicStaff);
     }//GEN-LAST:event_btnClinicStaffActionPerformed
 
     private void btnClinicDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClinicDoctorActionPerformed
         // TODO add your handling code here:
-        ClinicDoctorJPanel clinicDoctor = new ClinicDoctorJPanel(UserMainContainer, model);
+        ClinicDoctorJPanel clinicDoctor = new ClinicDoctorJPanel(UserMainContainer, business);
         signUpSplitPane.setRightComponent(clinicDoctor);
     }//GEN-LAST:event_btnClinicDoctorActionPerformed
 
     private void btnCSRSupervisorSiguUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCSRSupervisorSiguUpActionPerformed
         // TODO add your handling code here:
-        CSRSupervisorJPanel csrSupervisor = new CSRSupervisorJPanel(UserMainContainer, model);
+        CSRSupervisorJPanel csrSupervisor = new CSRSupervisorJPanel(UserMainContainer, business);
         signUpSplitPane.setRightComponent(csrSupervisor);
     }//GEN-LAST:event_btnCSRSupervisorSiguUpActionPerformed
 
     private void btnCSREmployerSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCSREmployerSignUpActionPerformed
         // TODO add your handling code here:
-        CSREmployerJPanel csrEmployer = new CSREmployerJPanel(UserMainContainer, model);
+        CSREmployerJPanel csrEmployer = new CSREmployerJPanel(UserMainContainer, business);
         signUpSplitPane.setRightComponent(csrEmployer);
     }//GEN-LAST:event_btnCSREmployerSignUpActionPerformed
 

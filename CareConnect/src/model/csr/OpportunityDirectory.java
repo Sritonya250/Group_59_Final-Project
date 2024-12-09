@@ -4,9 +4,9 @@
  */
 package model.csr;
 
-import java.util.ArrayList;
 import model.CSREnterprise.CSREmployer.CSREmployerProfile;
 import model.shelter.EmployableSkills;
+import java.util.ArrayList;
 
 /**
  *
@@ -28,5 +28,6 @@ public class OpportunityDirectory {
         opportunityList.add(o);
         return o;
     }
+    
     
 }

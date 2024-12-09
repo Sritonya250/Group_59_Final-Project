@@ -6,7 +6,7 @@ package model.Organization;
 
 /**
  *
- * @author stonya
+ * @author sritonya
  */
 public class ShelterAdministrationOrganization extends Organization{
     

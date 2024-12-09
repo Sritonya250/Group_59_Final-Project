@@ -4,7 +4,7 @@
  */
 package ui.SignUp;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.ShelterEnterprise.ShelterNurseStation.ShelterNurseProfile;
@@ -15,9 +15,9 @@ import model.userAccounts.UserAccount;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import static utils.ModelUtils.isValidEmail;
-import static utils.ModelUtils.isValidPassword;
-import static utils.ModelUtils.isValidPhoneNumber;
+import static utils.BusinessUtils.isValidEmail;
+import static utils.BusinessUtils.isValidPassword;
+import static utils.BusinessUtils.isValidPhoneNumber;
 
 /**
  *
@@ -29,12 +29,12 @@ public class ShelterNurseSignUpJPanel extends javax.swing.JPanel {
      * Creates new form ShelterNurseSignUpJPanel
      */
     JPanel UserMainContainer;
-    Model model;
-    public ShelterNurseSignUpJPanel(JPanel UserMainContainer, Model model) {
+    Business business;
+    public ShelterNurseSignUpJPanel(JPanel UserMainContainer, Business business) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         
         populateDropDowns();
     }
@@ -231,7 +231,7 @@ public class ShelterNurseSignUpJPanel extends javax.swing.JPanel {
             return;
         }
 
-        boolean isExistingUser = model.isExistingUserByUserName(userName);
+        boolean isExistingUser = business.isExistingUserByUserName(userName);
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -251,7 +251,7 @@ public class ShelterNurseSignUpJPanel extends javax.swing.JPanel {
 
         ShelterNurseProfile shelterNurse = new ShelterNurseProfile(p);
 
-        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterNurse.getRole());
+        Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterNurse.getRole());
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(shelterNurse.getRole());
 
         UserAccount shelterNurseUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(shelterNurse, userName, password, true);

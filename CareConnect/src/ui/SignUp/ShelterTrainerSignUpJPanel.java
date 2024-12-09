@@ -4,7 +4,7 @@
  */
 package ui.SignUp;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.ShelterEnterprise.ShelterUpSkillDept.ShelterTrainerProfile;
@@ -15,9 +15,9 @@ import model.userAccounts.UserAccount;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import static utils.ModelUtils.isValidEmail;
-import static utils.ModelUtils.isValidPassword;
-import static utils.ModelUtils.isValidPhoneNumber;
+import static utils.BusinessUtils.isValidEmail;
+import static utils.BusinessUtils.isValidPassword;
+import static utils.BusinessUtils.isValidPhoneNumber;
 
 /**
  *
@@ -26,15 +26,15 @@ import static utils.ModelUtils.isValidPhoneNumber;
 public class ShelterTrainerSignUpJPanel extends javax.swing.JPanel {
 
     JPanel UserMainContainer;
-    Model model;
+    Business business;
     /**
      * Creates new form ShelterTrainerSignUpJPanel
      */
-    public ShelterTrainerSignUpJPanel(JPanel UserMainContainer, Model model) {
+    public ShelterTrainerSignUpJPanel(JPanel UserMainContainer, Business business) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         
         populateDropDowns();
     }
@@ -231,7 +231,7 @@ public class ShelterTrainerSignUpJPanel extends javax.swing.JPanel {
             return;
         }
 
-        boolean isExistingUser = model.isExistingUserByUserName(userName);
+        boolean isExistingUser = business.isExistingUserByUserName(userName);
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -251,7 +251,7 @@ public class ShelterTrainerSignUpJPanel extends javax.swing.JPanel {
 
         ShelterTrainerProfile shelterTrainer = new ShelterTrainerProfile(p);
 
-        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterTrainer.getRole());
+        Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterTrainer.getRole());
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(shelterTrainer.getRole());
 
         UserAccount shelterTrainerUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(shelterTrainer, userName, password, true);

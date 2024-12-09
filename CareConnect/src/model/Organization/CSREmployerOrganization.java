@@ -8,6 +8,10 @@ package model.Organization;
  *
  * @author tbhar
  */
-public class CSREmployerOrganization {
+public class CSREmployerOrganization extends Organization {
+    
+    public CSREmployerOrganization() {
+        super(Organization.Type.CSR_EMPLOYER_DEPT.getValue());
+    }
     
 }

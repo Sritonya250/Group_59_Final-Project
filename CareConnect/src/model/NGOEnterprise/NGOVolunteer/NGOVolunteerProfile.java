@@ -4,6 +4,13 @@
  */
 package model.NGOEnterprise.NGOVolunteer;
 
+import model.Patient.PatientDirectory;
+import model.Patient.PatientProfile;
+import model.person.Person;
+import model.profile.Profile;
+import model.profile.UserRole;
+import utils.Neighbourhood;
+
 /**
  *
  * @author tbhar
