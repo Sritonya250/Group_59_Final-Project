@@ -4,6 +4,9 @@
  */
 package model.Enterprise;
 
+import model.Organization.Organization;
+import model.profile.UserRole;
+
 /**
  *
  * @author tbhar
@@ -28,4 +31,3 @@ public class NGOEnterprise extends Enterprise {
     }
     
 }
-

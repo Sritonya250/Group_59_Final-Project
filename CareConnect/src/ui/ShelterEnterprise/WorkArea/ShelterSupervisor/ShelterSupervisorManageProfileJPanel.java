@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterSupervisor;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.ShelterEnterprise.ShelterAdministration.ShelterSupervisorProfile;
@@ -14,9 +14,9 @@ import model.person.Person;
 import model.userAccounts.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import static utils.ModelUtils.isValidEmail;
-import static utils.ModelUtils.isValidPassword;
-import static utils.ModelUtils.isValidPhoneNumber;
+import static utils.BusinessUtils.isValidEmail;
+import static utils.BusinessUtils.isValidPassword;
+import static utils.BusinessUtils.isValidPhoneNumber;
 
 /**
  *
@@ -28,16 +28,16 @@ public class ShelterSupervisorManageProfileJPanel extends javax.swing.JFrame {
      * Creates new form SheltorSupervisorManageProfileJPanel
      */
     JPanel UserMainContainer;
-    Model model;
+    Business business;
     Enterprise enterprise;
     Organization organization;
     ShelterSupervisorProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public ShelterSupervisorManageProfileJPanel(JPanel UserMainContainer, Model model, Enterprise enterprise, Organization organization, ShelterSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ShelterSupervisorManageProfileJPanel(JPanel UserMainContainer, Business business, Enterprise enterprise, Organization organization, ShelterSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -346,7 +346,7 @@ public class ShelterSupervisorManageProfileJPanel extends javax.swing.JFrame {
             return;
         }
 
-        boolean isExistingUser = model.isExistingUserByUserName(userName);
+        boolean isExistingUser = business.isExistingUserByUserName(userName);
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -366,7 +366,7 @@ public class ShelterSupervisorManageProfileJPanel extends javax.swing.JFrame {
 
         ShelterSupervisorProfile shelterSupervisor = new ShelterSupervisorProfile(p);
 
-        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterSupervisor.getRole());
+        Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterSupervisor.getRole());
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(shelterSupervisor.getRole());
 
         UserAccount ngoSupervisorUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(shelterSupervisor, userName, password, true);

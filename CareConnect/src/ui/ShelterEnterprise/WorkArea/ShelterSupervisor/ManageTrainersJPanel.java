@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterSupervisor;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.ShelterEnterprise;
 import model.Organization.ShelterAdministrationOrganization;
 import model.ShelterEnterprise.ShelterAdministration.ShelterSupervisorProfile;
@@ -24,7 +24,7 @@ public class ManageTrainersJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageTrainersJPanel
      */
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterAdministrationOrganization organization;
     ShelterSupervisorProfile currentAuthenticatedUser;
@@ -32,10 +32,10 @@ public class ManageTrainersJPanel extends javax.swing.JPanel {
     
     UserAccount selectedTrainer;
     
-    public ManageTrainersJPanel(Model model, ShelterEnterprise enterprise, ShelterAdministrationOrganization organization, ShelterSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ManageTrainersJPanel(Business business, ShelterEnterprise enterprise, ShelterAdministrationOrganization organization, ShelterSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

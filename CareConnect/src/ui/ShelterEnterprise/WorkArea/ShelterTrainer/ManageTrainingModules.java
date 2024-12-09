@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterTrainer;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.ShelterEnterprise;
 import model.Organization.ShelterUpSkillOrganization;
 import model.Patient.PatientProfile;
@@ -30,16 +30,16 @@ public class ManageTrainingModules extends javax.swing.JPanel {
     TrainingModule selectedTrainingModule;
     PatientTrainer selectedPatientTrainer;
     
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterUpSkillOrganization organization;
     ShelterTrainerProfile currentAuthenticatedUser;
     UserAccount currentUser;
     
-    public ManageTrainingModules(Model model, ShelterEnterprise enterprise, ShelterUpSkillOrganization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ManageTrainingModules(Business business, ShelterEnterprise enterprise, ShelterUpSkillOrganization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

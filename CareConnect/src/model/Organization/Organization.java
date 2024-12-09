@@ -8,7 +8,7 @@ import model.userAccounts.UserAccountDirectory;
 
 /**
  *
- * @author nagal
+ * @author Monisha Narendran
  */
 public abstract class Organization {
     private static int organizationCount = 0;

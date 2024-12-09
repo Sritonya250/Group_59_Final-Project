@@ -4,7 +4,7 @@
  */
 package ui.ClinicEnterprise.WorkArea.ClinicDoctor;
 
-import model.Model;
+import model.Business;
 import model.ClinicEnterprise.ClinicDoctor.ClinicDoctorProfile;
 import model.Enterprise.ClinicEnterprise;
 import model.Organization.ClinicDoctorOrganization;
@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class TreatPatientsJPanel extends javax.swing.JPanel {
 
-    Model model;
+    Business business;
     ClinicEnterprise enterprise;
     ClinicDoctorOrganization organization;
     ClinicDoctorProfile currentAuthenticatedUser;
@@ -31,9 +31,9 @@ public class TreatPatientsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form TreatPatientsJPanel
      */
-    public TreatPatientsJPanel(Model model, ClinicEnterprise enterprise, ClinicDoctorOrganization organization, ClinicDoctorProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public TreatPatientsJPanel(Business business, ClinicEnterprise enterprise, ClinicDoctorOrganization organization, ClinicDoctorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -318,7 +318,7 @@ public class TreatPatientsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblPatients.getModel();
         model.setRowCount(0);
         
-        ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
+        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
         
         for(UserAccount user: users) {
              PatientProfile patient = (PatientProfile) user.getAssociatedProfile();

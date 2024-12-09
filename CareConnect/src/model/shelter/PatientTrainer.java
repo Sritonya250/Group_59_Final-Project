@@ -3,14 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model.shelter;
+
 import model.Patient.PatientProfile;
 
 /**
  *
  * @author sritonya
  */
-
 public class PatientTrainer {
+    
     PatientProfile patient;
     TrainingModule trainingModule;
     Grade grade;

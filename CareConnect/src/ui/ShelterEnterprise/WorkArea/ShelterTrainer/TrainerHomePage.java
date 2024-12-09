@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterTrainer;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Enterprise.ShelterEnterprise;
 import model.Organization.Organization;
@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class TrainerHomePage extends javax.swing.JPanel {
 
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterUpSkillOrganization organization;
     ShelterTrainerProfile currentAuthenticatedUser;
@@ -33,9 +33,9 @@ public class TrainerHomePage extends javax.swing.JPanel {
     /**
      * Creates new form TrainerHomePage
      */
-    public TrainerHomePage(Model model, ShelterEnterprise enterprise, ShelterUpSkillOrganization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public TrainerHomePage(Business business, ShelterEnterprise enterprise, ShelterUpSkillOrganization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -56,7 +56,7 @@ public class TrainerHomePage extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblPatients.getModel();
         model.setRowCount(0);
         
-        ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
+        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
         
         for(UserAccount user: users) {
              PatientProfile patient = (PatientProfile) user.getAssociatedProfile();

@@ -6,12 +6,12 @@ package model.Organization;
 
 /**
  *
- * @author sritonya
+ * @author Monisha Narendran
  */
-public class ShelterAdministrationOrganization extends Organization{
+public class ClinicAdministrationOrganization extends Organization {
     
-    public ShelterAdministrationOrganization() {
-        super(Organization.Type.SHELTER_ADMINISTRATION.getValue());
+    public ClinicAdministrationOrganization() {
+        super(Organization.Type.CLINIC_ADMINISTRATION.getValue());
     }
     
 }

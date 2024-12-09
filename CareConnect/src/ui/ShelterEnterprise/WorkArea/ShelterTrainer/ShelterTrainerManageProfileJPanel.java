@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterTrainer;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.ShelterEnterprise.ShelterUpSkillDept.ShelterTrainerProfile;
@@ -14,9 +14,9 @@ import model.person.Person;
 import model.userAccounts.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import static utils.ModelUtils.isValidEmail;
-import static utils.ModelUtils.isValidPassword;
-import static utils.ModelUtils.isValidPhoneNumber;
+import static utils.BusinessUtils.isValidEmail;
+import static utils.BusinessUtils.isValidPassword;
+import static utils.BusinessUtils.isValidPhoneNumber;
 
 /**
  *
@@ -27,15 +27,15 @@ public class ShelterTrainerManageProfileJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ShelterTrainerManageProfileJPanel
      */
-    Model model;
+    Business business;
     Enterprise enterprise;
     Organization organization;
     ShelterTrainerProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public ShelterTrainerManageProfileJPanel(Model model, Enterprise enterprise, Organization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ShelterTrainerManageProfileJPanel(Business business, Enterprise enterprise, Organization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -342,7 +342,7 @@ public class ShelterTrainerManageProfileJPanel extends javax.swing.JPanel {
             return;
         }
 
-        boolean isExistingUser = model.isExistingUserByUserName(userName);
+        boolean isExistingUser = business.isExistingUserByUserName(userName);
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -362,7 +362,7 @@ public class ShelterTrainerManageProfileJPanel extends javax.swing.JPanel {
 
         ShelterTrainerProfile shelterTrainer = new ShelterTrainerProfile(p);
 
-        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterTrainer.getRole());
+        Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterTrainer.getRole());
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(shelterTrainer.getRole());
 
         UserAccount shelterTrainerUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(shelterTrainer, userName, password, true);

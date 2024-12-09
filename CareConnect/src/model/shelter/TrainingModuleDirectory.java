@@ -7,6 +7,7 @@ package model.shelter;
 import model.ShelterEnterprise.ShelterUpSkillDept.ShelterTrainerProfile;
 import model.csr.Opportunity;
 import java.util.ArrayList;
+
 /**
  *
  * @author sritonya
@@ -31,4 +32,5 @@ public class TrainingModuleDirectory {
     public void addTrainingModule(TrainingModule trainingModule){
         trainingModuleList.add(trainingModule);
     }
+    
 }

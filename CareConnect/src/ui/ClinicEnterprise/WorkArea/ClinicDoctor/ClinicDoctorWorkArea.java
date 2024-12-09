@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UserInterface.ClinicEnterprise.WorkArea.ClinicDoctor;
+package ui.ClinicEnterprise.WorkArea.ClinicDoctor;
 
-import model.Model;
+import model.Business;
 import model.ClinicEnterprise.ClinicAdministration.ClinicStaffProfile;
 import model.ClinicEnterprise.ClinicDoctor.ClinicDoctorProfile;
 import model.Enterprise.ClinicEnterprise;
@@ -26,16 +26,16 @@ public class ClinicDoctorWorkArea extends javax.swing.JPanel {
      */
     
     JPanel UserMainContainer; 
-    Model model;
+    Business business;
     ClinicEnterprise enterprise;
     ClinicDoctorOrganization organization;
     ClinicDoctorProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public ClinicDoctorWorkArea(JPanel UserMainContainer, Model model, ClinicEnterprise enterprise, ClinicDoctorOrganization organization, ClinicDoctorProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ClinicDoctorWorkArea(JPanel UserMainContainer, Business business, ClinicEnterprise enterprise, ClinicDoctorOrganization organization, ClinicDoctorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -49,7 +49,7 @@ public class ClinicDoctorWorkArea extends javax.swing.JPanel {
     }
     
     public void showHomePage() {
-        TreatPatientsJPanel treatPatients = new TreatPatientsJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        TreatPatientsJPanel treatPatients = new TreatPatientsJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         clinicDoctorSplitPane.setRightComponent(treatPatients);
     }
 
@@ -103,8 +103,9 @@ public class ClinicDoctorWorkArea extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(btnManageProfile2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                        .addComponent(btnManageProfile2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(7, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -114,7 +115,7 @@ public class ClinicDoctorWorkArea extends javax.swing.JPanel {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageProfile2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 477, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 402, Short.MAX_VALUE)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
@@ -134,7 +135,7 @@ public class ClinicDoctorWorkArea extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(clinicDoctorSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 903, Short.MAX_VALUE)
+            .addComponent(clinicDoctorSplitPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

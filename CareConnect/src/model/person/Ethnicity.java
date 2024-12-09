@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
 package model.person;
 
@@ -8,7 +8,7 @@ package model.person;
  *
  * @author sritonya
  */
-public class Ethnicity {
+public enum Ethnicity {
     AFRICAN_AMERICAN("African American"),
     ASIAN("Asian"),
     HISPANIC_LATINO("Hispanic or Latino"),

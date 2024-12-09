@@ -6,6 +6,7 @@ package model.shelter;
 
 import model.Patient.PatientProfile;
 import java.util.ArrayList;
+
 /**
  *
  * @author sritonya
@@ -20,7 +21,6 @@ public class PatientTrainerDirectory {
     public ArrayList<PatientTrainer> getPatientTrainerList() {
         return patientTrainerList;
     }
-    
     
     public PatientTrainer createPatientTrainer(PatientProfile patient, TrainingModule trainingModule){
         PatientTrainer patientTrainer = new PatientTrainer(patient, trainingModule);
@@ -40,4 +40,5 @@ public class PatientTrainerDirectory {
         }
         return false;
     }
+    
 }

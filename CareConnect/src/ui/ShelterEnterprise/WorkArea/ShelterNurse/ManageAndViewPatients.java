@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterNurse;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Enterprise.ShelterEnterprise;
 import model.Organization.Organization;
@@ -29,7 +29,7 @@ import utils.Temperature;
  */
 public class ManageAndViewPatients extends javax.swing.JPanel {
 
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterNurseStationOrganization organization;
     ShelterNurseProfile currentAuthenticatedUser;
@@ -42,9 +42,9 @@ public class ManageAndViewPatients extends javax.swing.JPanel {
      * @param currentAuthenticatedUser
      * @param currentUser
      */
-    public ManageAndViewPatients(Model model, ShelterEnterprise enterprise, ShelterNurseStationOrganization organization, ShelterNurseProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ManageAndViewPatients(Business business, ShelterEnterprise enterprise, ShelterNurseStationOrganization organization, ShelterNurseProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -76,7 +76,7 @@ public class ManageAndViewPatients extends javax.swing.JPanel {
         model.setRowCount(0);
         
         
-        ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
+        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
         
         for(UserAccount user: users) {
              PatientProfile patient = (PatientProfile) user.getAssociatedProfile();

@@ -3,20 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+
 /**
  *
  * @author Monisha Narendran
  */
 public class ConfigureAnEcosystem {
     
-    public static model initializeEcosystem(){
-        Model model = new Model("Care Connect");
+    public static Business initializeEcosystem(){
+        Business business = new Business("Project Pheonix");
         
         //On boot up:
         //create all enterprises and organisations under them
         //create one Admin from each enterprise
         
-        return model;
+        return business;
     }
-    
 }

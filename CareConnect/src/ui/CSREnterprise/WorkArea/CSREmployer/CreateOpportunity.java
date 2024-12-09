@@ -4,7 +4,11 @@
  */
 package ui.CSREnterprise.WorkArea.CSREmployer;
 
+<<<<<<< HEAD
+import model.Business;
+=======
 import model.Model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.CSREnterprise.CSREmployer.CSREmployerProfile;
 import model.Enterprise.CSREnterprise;
 import model.Organization.CSREmployerOrganization;
@@ -23,15 +27,26 @@ public class CreateOpportunity extends javax.swing.JPanel {
     /**
      * Creates new form CreateOpportunity
      */
+<<<<<<< HEAD
+    Business business;
+=======
     Model model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     CSREnterprise enterprise;
     CSREmployerOrganization organization;
     CSREmployerProfile currentAuthenticatedUser;
     UserAccount currentUser;
+<<<<<<< HEAD
+    public CreateOpportunity(Business business, CSREnterprise enterprise, CSREmployerOrganization organization, CSREmployerProfile currentAuthenticatedUser, UserAccount currentUser) {
+        initComponents();
+        
+        this.business = business;
+=======
     public CreateOpportunity(Model model, CSREnterprise enterprise, CSREmployerOrganization organization, CSREmployerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.model = model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

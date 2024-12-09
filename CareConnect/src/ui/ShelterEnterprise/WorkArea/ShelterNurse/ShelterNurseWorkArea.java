@@ -5,7 +5,7 @@
 package ui.ShelterEnterprise.WorkArea.ShelterNurse;
 
 import ui.ShelterEnterprise.WorkArea.ShelterNurse.NurseHomePageJPanel;
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Enterprise.ShelterEnterprise;
 import model.Organization.Organization;
@@ -25,15 +25,15 @@ public class ShelterNurseWorkArea extends javax.swing.JPanel {
      * Creates new form ShelterNurseWorkArea
      */
     JPanel UserMainContainer;
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterNurseStationOrganization organization;
     ShelterNurseProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public ShelterNurseWorkArea(JPanel UserMainContainer, Model model, ShelterEnterprise enterprise, ShelterNurseStationOrganization organization, ShelterNurseProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ShelterNurseWorkArea(JPanel UserMainContainer, Business business, ShelterEnterprise enterprise, ShelterNurseStationOrganization organization, ShelterNurseProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -42,7 +42,7 @@ public class ShelterNurseWorkArea extends javax.swing.JPanel {
     }
     
     public void showHomePage() {
-        NurseHomePageJPanel nursehomePage = new NurseHomePageJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        NurseHomePageJPanel nursehomePage = new NurseHomePageJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         shelterNurseSplitPane.setRightComponent(nursehomePage);
     }
 
@@ -162,7 +162,7 @@ public class ShelterNurseWorkArea extends javax.swing.JPanel {
 
     private void btnManagePatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePatientsActionPerformed
         // TODO add your handling code here:
-        ManageAndViewPatients managePatients = new ManageAndViewPatients(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        ManageAndViewPatients managePatients = new ManageAndViewPatients(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         shelterNurseSplitPane.setRightComponent(managePatients);
     }//GEN-LAST:event_btnManagePatientsActionPerformed
 

@@ -4,7 +4,7 @@
  */
 package ui.WorkAreas.PatientRole;
 
-import model.Model;
+import model.Business;
 import model.Patient.DoctorVisit;
 import model.Patient.NurseVisit;
 import model.Patient.PatientProfile;
@@ -24,15 +24,15 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form PatientWorkAreaJPanel
      */
     JPanel UserMainContainer;
-    Model model;
+    Business business;
     PatientProfile currentAuthenticatedUser;
     UserAccount currentUser;
     
-    public PatientWorkAreaJPanel(JPanel UserMainContainer, Model model, PatientProfile currentAuthenticatedUser, UserAccount userAccount) {
+    public PatientWorkAreaJPanel(JPanel UserMainContainer, Business business, PatientProfile currentAuthenticatedUser, UserAccount userAccount) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
         this.currentUser = userAccount;
         populateRecentVitals();

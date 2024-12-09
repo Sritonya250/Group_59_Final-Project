@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterSupervisor;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Enterprise.ShelterEnterprise;
 import model.NGOEnterprise.NGOVolunteer.NGOVolunteerProfile;
@@ -30,7 +30,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageNursesJPanel extends javax.swing.JPanel {
 
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterAdministrationOrganization organization;
     ShelterSupervisorProfile currentAuthenticatedUser;
@@ -39,10 +39,10 @@ public class ManageNursesJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageNursesJPanel
      */
-    public ManageNursesJPanel(Model model, ShelterEnterprise enterprise, ShelterAdministrationOrganization organization, ShelterSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ManageNursesJPanel(Business business, ShelterEnterprise enterprise, ShelterAdministrationOrganization organization, ShelterSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;

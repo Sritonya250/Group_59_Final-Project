@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterSupervisor;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Enterprise.ShelterEnterprise;
 import model.Organization.Organization;
@@ -24,15 +24,15 @@ public class ShelterSupervisorWorkArea extends javax.swing.JPanel {
      * Creates new form ShelterSupervisorWorkArea
      */
     JPanel UserMainContainer;
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterAdministrationOrganization organization;
     ShelterSupervisorProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public ShelterSupervisorWorkArea(JPanel UserMainContainer, Model model, ShelterEnterprise enterprise, ShelterAdministrationOrganization organization, ShelterSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ShelterSupervisorWorkArea(JPanel UserMainContainer, Business business, ShelterEnterprise enterprise, ShelterAdministrationOrganization organization, ShelterSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -141,7 +141,7 @@ public class ShelterSupervisorWorkArea extends javax.swing.JPanel {
 
     private void btnManageTrainersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageTrainersActionPerformed
         // TODO add your handling code here:
-        ManageTrainersJPanel manageTrainerPanel = new ManageTrainersJPanel(model, enterprise, organization, currentAuthenticatedUser, currentUser);
+        ManageTrainersJPanel manageTrainerPanel = new ManageTrainersJPanel(business, enterprise, organization, currentAuthenticatedUser, currentUser);
         shelterSupervisorSplitPane.setRightComponent(manageTrainerPanel);
     }//GEN-LAST:event_btnManageTrainersActionPerformed
 
@@ -154,7 +154,7 @@ public class ShelterSupervisorWorkArea extends javax.swing.JPanel {
 
     private void btnManageNursesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageNursesActionPerformed
         // TODO add your handling code here:
-        ManageNursesJPanel manageNursePanel = new ManageNursesJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        ManageNursesJPanel manageNursePanel = new ManageNursesJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         shelterSupervisorSplitPane.setRightComponent(manageNursePanel);
     }//GEN-LAST:event_btnManageNursesActionPerformed
 

@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
 package model.shelter;
 
@@ -8,7 +8,7 @@ package model.shelter;
  *
  * @author sritonya
  */
-public class EnrollmentStatus {
+public enum EnrollmentStatus {
     IN_PROGRESS("In Progress"),
     COMPLETED("Completed");
 

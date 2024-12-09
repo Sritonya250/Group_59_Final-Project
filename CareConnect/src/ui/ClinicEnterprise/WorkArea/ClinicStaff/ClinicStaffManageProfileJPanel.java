@@ -4,7 +4,7 @@
  */
 package ui.ClinicEnterprise.WorkArea.ClinicStaff;
 
-import model.Model;
+import model.Business;
 import model.ClinicEnterprise.ClinicAdministration.ClinicStaffProfile;
 import model.Enterprise.ClinicEnterprise;
 import model.Enterprise.Enterprise;
@@ -16,9 +16,9 @@ import model.person.Person;
 import model.userAccounts.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import static utils.ModelUtils.isValidEmail;
-import static utils.ModelUtils.isValidPassword;
-import static utils.ModelUtils.isValidPhoneNumber;
+import static utils.BusinessUtils.isValidEmail;
+import static utils.BusinessUtils.isValidPassword;
+import static utils.BusinessUtils.isValidPhoneNumber;
 
 /**
  *
@@ -30,17 +30,17 @@ public class ClinicStaffManageProfileJPanel extends javax.swing.JPanel {
      * Creates new form ClinicStaffManageProfileJPanel
      */
     JPanel UserMainContainer; 
-    Model model;
+    Business business;
     ClinicEnterprise enterprise;
     ClinicAdministrationOrganization organization;
     ClinicStaffProfile currentAuthenticatedUser;
     UserAccount currentUser;
     
-    public ClinicStaffManageProfileJPanel(JPanel UserMainContainer, Model model, ClinicEnterprise enterprise, ClinicAdministrationOrganization organization, ClinicStaffProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ClinicStaffManageProfileJPanel(JPanel UserMainContainer, Business business, ClinicEnterprise enterprise, ClinicAdministrationOrganization organization, ClinicStaffProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -350,7 +350,7 @@ public class ClinicStaffManageProfileJPanel extends javax.swing.JPanel {
             return;
         }
 
-        boolean isExistingUser = model.isExistingUserByUserName(userName);
+        boolean isExistingUser = business.isExistingUserByUserName(userName);
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -370,7 +370,7 @@ public class ClinicStaffManageProfileJPanel extends javax.swing.JPanel {
 
         ClinicStaffProfile clinicStaff = new ClinicStaffProfile(p);
 
-        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(clinicStaff.getRole());
+        Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(clinicStaff.getRole());
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(clinicStaff.getRole());
 
         UserAccount clinicStaffUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(clinicStaff, userName, password, true);

@@ -7,12 +7,12 @@ package model.shelter;
 import model.ShelterEnterprise.ShelterUpSkillDept.ShelterTrainerProfile;
 import model.csr.Opportunity;
 
-
 /**
  *
  * @author sritonya
  */
 public class TrainingModule {
+    
     private static int trainingModuleCount = 0;
     private String trainingModuleId;
     
@@ -68,5 +68,5 @@ public class TrainingModule {
     }
     
     
-    
+
 }

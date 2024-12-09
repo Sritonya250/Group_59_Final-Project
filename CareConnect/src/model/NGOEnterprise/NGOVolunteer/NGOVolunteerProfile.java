@@ -4,9 +4,18 @@
  */
 package model.NGOEnterprise.NGOVolunteer;
 
+<<<<<<< HEAD
+import model.Patient.PatientDirectory;
+import model.Patient.PatientProfile;
+import model.person.Person;
+import model.profile.Profile;
+import model.profile.UserRole;
+import utils.Neighbourhood;
+=======
 import model.Profile.Profile;
 import model.Profile.UserRole;
 import model.person.Person;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
 /**
  *

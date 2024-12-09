@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterNurse;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Enterprise.ShelterEnterprise;
 import model.Organization.Organization;
@@ -16,9 +16,9 @@ import model.person.Person;
 import model.userAccounts.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import static utils.ModelUtils.isValidEmail;
-import static utils.ModelUtils.isValidPassword;
-import static utils.ModelUtils.isValidPhoneNumber;
+import static utils.BusinessUtils.isValidEmail;
+import static utils.BusinessUtils.isValidPassword;
+import static utils.BusinessUtils.isValidPhoneNumber;
 
 /**
  *
@@ -30,17 +30,17 @@ public class ShelterNurseManageProfileJPanel extends javax.swing.JFrame {
      * Creates new form ShelterNurseManageProfileJPanel
      */
     JPanel UserMainContainer;
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterNurseStationOrganization organization;
     ShelterNurseProfile currentAuthenticatedUser;
     UserAccount currentUser;
     
-    public ShelterNurseManageProfileJPanel(JPanel UserMainContainer, Model model, ShelterEnterprise enterprise, ShelterNurseStationOrganization organization, ShelterNurseProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ShelterNurseManageProfileJPanel(JPanel UserMainContainer, Business business, ShelterEnterprise enterprise, ShelterNurseStationOrganization organization, ShelterNurseProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -234,7 +234,7 @@ public class ShelterNurseManageProfileJPanel extends javax.swing.JFrame {
             return;
         }
 
-        boolean isExistingUser = model.isExistingUserByUserName(userName);
+        boolean isExistingUser = business.isExistingUserByUserName(userName);
 
         if(isExistingUser) {
             JOptionPane.showMessageDialog(this, "UserName Already exists");
@@ -254,7 +254,7 @@ public class ShelterNurseManageProfileJPanel extends javax.swing.JFrame {
 
         ShelterNurseProfile shelterNurse = new ShelterNurseProfile(p);
 
-        Enterprise supportedEnterprise = model.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterNurse.getRole());
+        Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(shelterNurse.getRole());
         Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(shelterNurse.getRole());
 
         UserAccount shelterNurseUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(shelterNurse, userName, password, true);

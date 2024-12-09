@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
 package model.shelter;
 
@@ -8,7 +8,7 @@ package model.shelter;
  *
  * @author sritonya
  */
-public class EmployableSkills {
+public enum EmployableSkills {
     CUSTOMER_SERVICE("Customer Service Skills", "Training in basic customer interactions and communication."),
     BASIC_COMPUTER("Basic Computer Skills", "Introduction to using computers, email, and basic software applications."),
     CASHIER("Cashier Skills", "Handling transactions and using point-of-sale systems."),

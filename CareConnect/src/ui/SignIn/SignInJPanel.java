@@ -15,7 +15,7 @@ import ui.ShelterEnterprise.WorkArea.ShelterSupervisor.ShelterSupervisorWorkArea
 import ui.ShelterEnterprise.WorkArea.ShelterTrainer.ShelterTrainerWorkArea;
 import ui.SignUp.SignUpJPanel;
 import ui.WorkAreas.PatientRole.PatientWorkAreaJPanel;
-import model.Model;
+import model.Business;
 import model.CSREnterprise.CSRAdministration.CSRAdminProfile;
 import model.CSREnterprise.CSREmployer.CSREmployerProfile;
 import model.ClinicEnterprise.ClinicAdministration.ClinicStaffProfile;
@@ -53,7 +53,7 @@ import model.userAccounts.UserAccountDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import utils.ModelUtils;
+import utils.BusinessUtils;
 import utils.Neighbourhood;
 
 /**
@@ -65,20 +65,20 @@ public class SignInJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SignInJPanel
      */
-    private Model model;
+    private Business business;
     private JPanel UserMainContainer;
-    public SignInJPanel(JPanel UserMainContainer, Model model) {
+    public SignInJPanel(JPanel UserMainContainer, Business business) {
         
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         
         populateInitialData();
     }
     
     public void populateInitialData(){
-        UserAccountDirectory masterPatientList = model.getMasterPatientList();
+        UserAccountDirectory masterPatientList = business.getMasterPatientList();
         
         //Patient 1
         Person p = new Person();
@@ -162,7 +162,7 @@ public class SignInJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(204, 204, 255));
 
         labelPanelTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        labelPanelTitle.setText("Welcome to Transformation Inc");
+        labelPanelTitle.setText("Welcome to Care Connect");
 
         labelUserName.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         labelUserName.setText("User Name:");
@@ -201,32 +201,27 @@ public class SignInJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtUserNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnSignIn)
-                                .addGap(46, 46, 46)
-                                .addComponent(btnSignUp)))
-                        .addGap(51, 51, 51))
-                    .addComponent(labelPanelTitle, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addGap(296, 296, 296)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSignIn)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtUserNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelPanelTitle)
+                    .addComponent(btnSignUp))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(152, 152, 152)
+                .addGap(41, 41, 41)
                 .addComponent(labelPanelTitle)
-                .addGap(56, 56, 56)
+                .addGap(103, 103, 103)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUserName)
                     .addComponent(txtUserNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -234,11 +229,11 @@ public class SignInJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPassword)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSignIn)
-                    .addComponent(btnSignUp))
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addGap(62, 62, 62)
+                .addComponent(btnSignUp)
+                .addGap(18, 18, 18)
+                .addComponent(btnSignIn)
+                .addContainerGap(236, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -262,12 +257,12 @@ public class SignInJPanel extends javax.swing.JPanel {
             return;
         }
 
-        if(!ModelUtils.isValidPassword(password)) {
+        if(!BusinessUtils.isValidPassword(password)) {
             JOptionPane.showMessageDialog(this, "Entered Password is not Valid!");
             return;
         }
 
-        String encryptedPassword = ModelUtils.encryptPassword(password);
+        String encryptedPassword = BusinessUtils.encryptPassword(password);
 
         if(encryptedPassword == null) {
             JOptionPane.showMessageDialog(this, "There was an error in encrypting the password");
@@ -278,11 +273,11 @@ public class SignInJPanel extends javax.swing.JPanel {
         Enterprise supportingEnterprise = null;
         Organization supportingOrganization = null;
         
-        UserAccountDirectory uad = model.getMasterPatientList();
+        UserAccountDirectory uad = business.getMasterPatientList();
         userAccount = uad.AuthenticateUser(userName, password);
         
         if(userAccount == null){
-            for(Enterprise enterprise: model.getEnterpriseCatalog().getEnterpriseList()){
+            for(Enterprise enterprise: business.getEnterpriseCatalog().getEnterpriseList()){
                 for(Organization organization: enterprise.getOrganizationCatalog().getOrganizationList()){
                     userAccount = organization.getOrganizationUserDirectory().AuthenticateUser(userName, password);
 //                    System.out.println("UserAccount for " + organization.getName() + " : " + userAccount);
@@ -314,70 +309,70 @@ public class SignInJPanel extends javax.swing.JPanel {
 
             if(profile instanceof PatientProfile) {
                 PatientProfile patient = (PatientProfile) profile;
-                PatientWorkAreaJPanel patientWorkArea = new PatientWorkAreaJPanel(UserMainContainer, model, patient, userAccount);
+                PatientWorkAreaJPanel patientWorkArea = new PatientWorkAreaJPanel(UserMainContainer, business, patient, userAccount);
                 UserMainContainer.add("PatientWorkArea", patientWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
             }
             else if(profile instanceof NGOVolunteerProfile) {
                 NGOVolunteerProfile ngoVolunteer = (NGOVolunteerProfile) profile;
-                NGOVolunteerJPanel ngoVolunteerWorkArea = new NGOVolunteerJPanel(UserMainContainer, model, (NGOEnterprise) supportingEnterprise, (NGOVolunteerOrganization) supportingOrganization, ngoVolunteer, userAccount);
+                NGOVolunteerJPanel ngoVolunteerWorkArea = new NGOVolunteerJPanel(UserMainContainer, business, (NGOEnterprise) supportingEnterprise, (NGOVolunteerOrganization) supportingOrganization, ngoVolunteer, userAccount);
                 UserMainContainer.add("NGOVolunteerWorkArea", ngoVolunteerWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
             }
             else if(profile instanceof NGOSupervisorProfile) {
                 NGOSupervisorProfile ngoSupervisor = (NGOSupervisorProfile) profile;
-                NGOAdminJPanel ngoSupervisorWorkArea = new NGOAdminJPanel(UserMainContainer, model, (NGOEnterprise) supportingEnterprise, (NGOAdministrationOrganization) supportingOrganization, ngoSupervisor, userAccount);
+                NGOAdminJPanel ngoSupervisorWorkArea = new NGOAdminJPanel(UserMainContainer, business, (NGOEnterprise) supportingEnterprise, (NGOAdministrationOrganization) supportingOrganization, ngoSupervisor, userAccount);
                 UserMainContainer.add("NGOSupervisorWorkArea", ngoSupervisorWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
             }
             else if(profile instanceof ShelterSupervisorProfile) {
                 ShelterSupervisorProfile shelterSupervisor = (ShelterSupervisorProfile) profile;
-                ShelterSupervisorWorkArea shelterSupervisorWorkArea = new ShelterSupervisorWorkArea(UserMainContainer, model, (ShelterEnterprise) supportingEnterprise, (ShelterAdministrationOrganization) supportingOrganization, shelterSupervisor, userAccount);
+                ShelterSupervisorWorkArea shelterSupervisorWorkArea = new ShelterSupervisorWorkArea(UserMainContainer, business, (ShelterEnterprise) supportingEnterprise, (ShelterAdministrationOrganization) supportingOrganization, shelterSupervisor, userAccount);
                 UserMainContainer.add("ShelterSupervisorWorkArea", shelterSupervisorWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
             }
             else if(profile instanceof ShelterNurseProfile) {
                 ShelterNurseProfile shelterNurse = (ShelterNurseProfile) profile;
-                ShelterNurseWorkArea shelterNurseWorkArea = new ShelterNurseWorkArea(UserMainContainer, model, (ShelterEnterprise) supportingEnterprise, (ShelterNurseStationOrganization) supportingOrganization, shelterNurse, userAccount);
+                ShelterNurseWorkArea shelterNurseWorkArea = new ShelterNurseWorkArea(UserMainContainer, business, (ShelterEnterprise) supportingEnterprise, (ShelterNurseStationOrganization) supportingOrganization, shelterNurse, userAccount);
                 UserMainContainer.add("ShelterNurseWorkArea", shelterNurseWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
             }
             else if(profile instanceof ShelterTrainerProfile) {
                 ShelterTrainerProfile shelterTrainer = (ShelterTrainerProfile) profile;
-                ShelterTrainerWorkArea shelterTrainerWorkArea = new ShelterTrainerWorkArea(UserMainContainer, model, (ShelterEnterprise) supportingEnterprise, (ShelterUpSkillOrganization) supportingOrganization, shelterTrainer, userAccount);
+                ShelterTrainerWorkArea shelterTrainerWorkArea = new ShelterTrainerWorkArea(UserMainContainer, business, (ShelterEnterprise) supportingEnterprise, (ShelterUpSkillOrganization) supportingOrganization, shelterTrainer, userAccount);
                 UserMainContainer.add("ShelterTrainerWorkArea", shelterTrainerWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
             }
             else if(profile instanceof ClinicStaffProfile) {
                 ClinicStaffProfile clinicStaff = (ClinicStaffProfile) profile;
-                ClinicStaffWorkArea clinicStaffWorkArea = new ClinicStaffWorkArea(UserMainContainer, model, (ClinicEnterprise) supportingEnterprise, (ClinicAdministrationOrganization) supportingOrganization, clinicStaff, userAccount);
+                ClinicStaffWorkArea clinicStaffWorkArea = new ClinicStaffWorkArea(UserMainContainer, business, (ClinicEnterprise) supportingEnterprise, (ClinicAdministrationOrganization) supportingOrganization, clinicStaff, userAccount);
                 UserMainContainer.add("ClinicStaffWorkArea", clinicStaffWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
             }
             else if(profile instanceof ClinicDoctorProfile) {
                 ClinicDoctorProfile clinicDoctor = (ClinicDoctorProfile) profile;
-                ClinicDoctorWorkArea clinicDoctorWorkArea = new ClinicDoctorWorkArea(UserMainContainer, model, (ClinicEnterprise) supportingEnterprise, (ClinicDoctorOrganization) supportingOrganization, clinicDoctor, userAccount);
+                ClinicDoctorWorkArea clinicDoctorWorkArea = new ClinicDoctorWorkArea(UserMainContainer, business, (ClinicEnterprise) supportingEnterprise, (ClinicDoctorOrganization) supportingOrganization, clinicDoctor, userAccount);
                 UserMainContainer.add("ClinicDoctorWorkArea", clinicDoctorWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
             }
             else if(profile instanceof CSRAdminProfile) {
                 CSRAdminProfile csrAdmin = (CSRAdminProfile) profile;
-                CSRAdminWorkArea csrAdminWorkArea = new CSRAdminWorkArea(UserMainContainer, model, (CSREnterprise) supportingEnterprise, (CSRAdministrationOrganization) supportingOrganization, csrAdmin, userAccount);
+                CSRAdminWorkArea csrAdminWorkArea = new CSRAdminWorkArea(UserMainContainer, business, (CSREnterprise) supportingEnterprise, (CSRAdministrationOrganization) supportingOrganization, csrAdmin, userAccount);
                 UserMainContainer.add("CSRAdminWorkArea", csrAdminWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
             }
             else if(profile instanceof CSREmployerProfile) {
                 CSREmployerProfile csrEmployer = (CSREmployerProfile) profile;
-                CSREmployerWorkArea csrEmployerWorkArea = new CSREmployerWorkArea(UserMainContainer, model, (CSREnterprise) supportingEnterprise, (CSREmployerOrganization) supportingOrganization, csrEmployer, userAccount);
+                CSREmployerWorkArea csrEmployerWorkArea = new CSREmployerWorkArea(UserMainContainer, business, (CSREnterprise) supportingEnterprise, (CSREmployerOrganization) supportingOrganization, csrEmployer, userAccount);
                 UserMainContainer.add("CSREmployerWorkArea", csrEmployerWorkArea);
                 CardLayout layout = (CardLayout) UserMainContainer.getLayout();
                 layout.next(UserMainContainer);
@@ -391,7 +386,7 @@ public class SignInJPanel extends javax.swing.JPanel {
 
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         // TODO add your handling code here:
-        SignUpJPanel signUpPanel = new SignUpJPanel(UserMainContainer, model);
+        SignUpJPanel signUpPanel = new SignUpJPanel(UserMainContainer, business);
         UserMainContainer.add("SignUpJPanel", signUpPanel);
         CardLayout layout = (CardLayout) UserMainContainer.getLayout();
         layout.next(UserMainContainer);

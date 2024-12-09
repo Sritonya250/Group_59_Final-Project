@@ -6,7 +6,7 @@ package ui.ClinicEnterprise.WorkArea.ClinicStaff;
 
 import ui.ClinicEnterprise.WorkArea.ClinicStaff.ClinicAssignPatientsJPanel;
 import ui.ClinicEnterprise.WorkArea.ClinicStaff.ClinicManageDoctors;
-import model.Model;
+import model.Business;
 import model.ClinicEnterprise.ClinicAdministration.ClinicStaffProfile;
 import model.Enterprise.ClinicEnterprise;
 import model.Enterprise.Enterprise;
@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Monisha Narendran
+ * @author  Monisha Narendran
  */
 public class ClinicStaffWorkArea extends javax.swing.JPanel {
 
@@ -26,16 +26,16 @@ public class ClinicStaffWorkArea extends javax.swing.JPanel {
      * Creates new form ClinicStaffJPanel
      */
     JPanel UserMainContainer; 
-    Model model;
+    Business business;
     ClinicEnterprise enterprise;
     ClinicAdministrationOrganization organization;
     ClinicStaffProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public ClinicStaffWorkArea(JPanel UserMainContainer, Model model, ClinicEnterprise enterprise, ClinicAdministrationOrganization organization, ClinicStaffProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ClinicStaffWorkArea(JPanel UserMainContainer, Business business, ClinicEnterprise enterprise, ClinicAdministrationOrganization organization, ClinicStaffProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -136,7 +136,7 @@ public class ClinicStaffWorkArea extends javax.swing.JPanel {
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     public void showHomePage() {
-        ClinicAssignPatientsJPanel assignPatients = new ClinicAssignPatientsJPanel(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        ClinicAssignPatientsJPanel assignPatients = new ClinicAssignPatientsJPanel(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         clinicStaffSplitPane.setRightComponent(assignPatients);
     }
     
@@ -147,7 +147,7 @@ public class ClinicStaffWorkArea extends javax.swing.JPanel {
 
     private void btnDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorsActionPerformed
         // TODO add your handling code here:
-        ClinicManageDoctors manageDoctors = new ClinicManageDoctors(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        ClinicManageDoctors manageDoctors = new ClinicManageDoctors(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         clinicStaffSplitPane.setRightComponent(manageDoctors);
     }//GEN-LAST:event_btnDoctorsActionPerformed
 

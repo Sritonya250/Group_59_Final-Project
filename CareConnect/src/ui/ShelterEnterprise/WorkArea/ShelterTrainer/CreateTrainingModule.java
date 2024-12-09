@@ -4,7 +4,7 @@
  */
 package ui.ShelterEnterprise.WorkArea.ShelterTrainer;
 
-import model.Model;
+import model.Business;
 import model.Enterprise.CSREnterprise;
 import model.Enterprise.Enterprise;
 import model.Enterprise.ShelterEnterprise;
@@ -27,7 +27,7 @@ public class CreateTrainingModule extends javax.swing.JPanel {
     /**
      * Creates new form CreateTrainingModule
      */
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterUpSkillOrganization organization;
     ShelterTrainerProfile currentAuthenticatedUser;
@@ -35,10 +35,10 @@ public class CreateTrainingModule extends javax.swing.JPanel {
     
     Opportunity selectedOpportunity;
     
-    public CreateTrainingModule(Model model, ShelterEnterprise enterprise, ShelterUpSkillOrganization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public CreateTrainingModule(Business business, ShelterEnterprise enterprise, ShelterUpSkillOrganization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -55,7 +55,7 @@ public class CreateTrainingModule extends javax.swing.JPanel {
         
         //find the CSR Enterprise
         CSREnterprise csrEnterprise = null;
-        for(Enterprise e: model.getEnterpriseCatalog().getEnterpriseList()){
+        for(Enterprise e: business.getEnterpriseCatalog().getEnterpriseList()){
             if(e instanceof CSREnterprise){
                 csrEnterprise = (CSREnterprise) e;
             }

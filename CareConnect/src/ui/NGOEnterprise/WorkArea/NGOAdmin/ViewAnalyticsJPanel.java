@@ -4,7 +4,11 @@
  */
 package ui.NGOEnterprise.WorkArea.NGOAdmin;
 
+<<<<<<< HEAD
+import model.Business;
+=======
 import model.Model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 import model.Enterprise.Enterprise;
 import model.Enterprise.NGOEnterprise;
 import model.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
@@ -30,7 +34,11 @@ import utils.Neighbourhood;
  */
 public class ViewAnalyticsJPanel extends javax.swing.JPanel {
 
+<<<<<<< HEAD
+    Business business;
+=======
     Model model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
     NGOEnterprise enterprise;
     NGOAdministrationOrganization organization;
     NGOSupervisorProfile currentAuthenticatedUser;
@@ -38,10 +46,17 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewAnalyticsJPanel
      */
+<<<<<<< HEAD
+    public ViewAnalyticsJPanel(Business business, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
+        initComponents();
+        DisplayDateAndTime();
+        this.business = business;
+=======
     public ViewAnalyticsJPanel(Model model, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         DisplayDateAndTime();
         this.model = model;
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -56,7 +71,11 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
     
     public void populateLabelMetrics() {
         
+<<<<<<< HEAD
+        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+=======
         ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
         noOfPatients.setText(Integer.toString(users.size()));
         
         ArrayList<UserAccount> ngoVolunteers = enterprise.getOrganizationGivenRole(UserRole.NGO_VOLUNTEER).getOrganizationUserDirectory().getUserAccountList();
@@ -73,7 +92,11 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) neightbourhoodsAttentionTable.getModel();
         model.setRowCount(0);
 
+<<<<<<< HEAD
+        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+=======
         ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
         HashMap<String, Integer> neighborhoodCountMap = new HashMap<>();
 
@@ -101,7 +124,11 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) ethnicityTable.getModel();
         model.setRowCount(0);
 
+<<<<<<< HEAD
+        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+=======
         ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
         HashMap<String, Integer> ethnicityMap = new HashMap<>();
 
@@ -129,7 +156,11 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) genderCompTable.getModel();
         model.setRowCount(0);
 
+<<<<<<< HEAD
+        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+=======
         ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
         HashMap<String, Integer> genderMap = new HashMap<>();
 
@@ -157,7 +188,11 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) primaryIssueTable.getModel();
         model.setRowCount(0);
 
+<<<<<<< HEAD
+        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+=======
         ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
         HashMap<String, Integer> issueMap = new HashMap<>();
 
@@ -185,7 +220,11 @@ public class ViewAnalyticsJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) SecondaryIssueTable.getModel();
         model.setRowCount(0);
 
+<<<<<<< HEAD
+        ArrayList<UserAccount> users = business.getMasterPatientList().getUserAccountList();
+=======
         ArrayList<UserAccount> users = model.getMasterPatientList().getUserAccountList();
+>>>>>>> 36de84e22a5fdfd60b6022debe21717dd918fd97
 
         HashMap<String, Integer> issueMap = new HashMap<>();
 

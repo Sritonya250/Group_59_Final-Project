@@ -5,7 +5,7 @@
 package ui.ShelterEnterprise.WorkArea.ShelterTrainer;
 
 import ui.ShelterEnterprise.WorkArea.ShelterTrainer.TrainerHomePage;
-import model.Model;
+import model.Business;
 import model.Enterprise.Enterprise;
 import model.Enterprise.ShelterEnterprise;
 import model.Organization.Organization;
@@ -25,16 +25,16 @@ public class ShelterTrainerWorkArea extends javax.swing.JPanel {
      * Creates new form ShelterTrainerJPanel
      */
     JPanel UserMainContainer; 
-    Model model;
+    Business business;
     ShelterEnterprise enterprise;
     ShelterUpSkillOrganization organization;
     ShelterTrainerProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public ShelterTrainerWorkArea(JPanel UserMainContainer, Model model, ShelterEnterprise enterprise, ShelterUpSkillOrganization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
+    public ShelterTrainerWorkArea(JPanel UserMainContainer, Business business, ShelterEnterprise enterprise, ShelterUpSkillOrganization organization, ShelterTrainerProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
         this.UserMainContainer = UserMainContainer;
-        this.model = model;
+        this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.currentAuthenticatedUser = currentAuthenticatedUser;
@@ -44,7 +44,7 @@ public class ShelterTrainerWorkArea extends javax.swing.JPanel {
     }
     
     public void goToHomePage() {
-        TrainerHomePage managePatientsPanel = new TrainerHomePage(this.model, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
+        TrainerHomePage managePatientsPanel = new TrainerHomePage(this.business, this.enterprise, this.organization, this.currentAuthenticatedUser, this.currentUser);
         shelterTrainerSplitPane.setRightComponent(managePatientsPanel);
     }
 
@@ -184,19 +184,19 @@ public class ShelterTrainerWorkArea extends javax.swing.JPanel {
 
     private void btnCreateTrainingModuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateTrainingModuleActionPerformed
         // TODO add your handling code here:
-        CreateTrainingModule createTrainingModuleJPanel = new CreateTrainingModule(model, enterprise, organization, currentAuthenticatedUser, currentUser);
+        CreateTrainingModule createTrainingModuleJPanel = new CreateTrainingModule(business, enterprise, organization, currentAuthenticatedUser, currentUser);
         shelterTrainerSplitPane.setRightComponent(createTrainingModuleJPanel);
     }//GEN-LAST:event_btnCreateTrainingModuleActionPerformed
 
     private void btnEnrollPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnrollPatientsActionPerformed
         // TODO add your handling code here:
-        EnrollPatients enrollPatientsPanel = new EnrollPatients(model, enterprise, organization, currentAuthenticatedUser, currentUser);
+        EnrollPatients enrollPatientsPanel = new EnrollPatients(business, enterprise, organization, currentAuthenticatedUser, currentUser);
         shelterTrainerSplitPane.setRightComponent(enrollPatientsPanel);
     }//GEN-LAST:event_btnEnrollPatientsActionPerformed
 
     private void btnEnrollPatients1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnrollPatients1ActionPerformed
         // TODO add your handling code here:
-        ManageTrainingModules manageTrainingModulePanel = new ManageTrainingModules(model, enterprise, organization, currentAuthenticatedUser, currentUser);
+        ManageTrainingModules manageTrainingModulePanel = new ManageTrainingModules(business, enterprise, organization, currentAuthenticatedUser, currentUser);
         shelterTrainerSplitPane.setRightComponent(manageTrainingModulePanel);
     }//GEN-LAST:event_btnEnrollPatients1ActionPerformed
 
