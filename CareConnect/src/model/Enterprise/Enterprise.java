@@ -16,7 +16,12 @@ import model.userAccounts.UserAccountDirectory;
  */
 public abstract class Enterprise {
     
+    // Static counter to maintain the total number of enterprises created.
+    
     private static int enterpriseCount = 0;
+    
+    // Unique identifier for the enterprise.
+
     private String enterpriseId;
     
     private String name;
@@ -27,7 +32,7 @@ public abstract class Enterprise {
         NGO("NGO Enterprise"),
         SHELTER("Shelter Enterprise"),
         CLINIC("Clinic Enterprise"),
-        CSR("Corporate Social Responsibility Enterprise");
+        CSR("CSR Enterprise");
         
         private String value;
         private Type(String value) {
