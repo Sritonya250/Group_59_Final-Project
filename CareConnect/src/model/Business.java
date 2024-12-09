@@ -17,6 +17,7 @@ import model.Patient.PatientProfile;
 import model.ShelterEnterprise.ShelterAdministration.ShelterSupervisorProfile;
 import model.ShelterEnterprise.ShelterNurseStation.ShelterNurseProfile;
 import model.ClinicEnterprise.ClinicDoctor.ClinicDoctorProfile;
+import model.Profile.UserRole;
 import model.ShelterEnterprise.ShelterUpSkillDept.ShelterTrainerProfile;
 import model.person.Ethnicity;
 import model.person.Gender;
