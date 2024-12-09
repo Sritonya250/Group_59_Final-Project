@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package ui.CSREnterprise.WorkArea.CSRAdmin;
+package ui.NGOEnterprise.WorkArea.NGOAdmin;
 
 import business.Business;
-import business.CSREnterprise.CSRAdministration.CSRAdminProfile;
-import business.Enterprise.CSREnterprise;
 import business.Enterprise.Enterprise;
-import business.Organization.CSRAdministrationOrganization;
+import business.Enterprise.NGOEnterprise;
+import business.NGOEnterprise.NGOAdministration.NGOSupervisorProfile;
+import business.Organization.NGOAdministrationOrganization;
 import business.Organization.Organization;
 import business.person.Ethnicity;
 import business.person.Gender;
@@ -22,21 +22,25 @@ import static utils.BusinessUtils.isValidPhoneNumber;
 
 /**
  *
- * @author tbhar
+ * @author ketan
  */
-public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
+public class NGOAdminManageProfileJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form CSRAdminManageProfileJPanel
+     * Creates new form NGOAdminManageProfileJPanel
      */
+    
+    JPanel UserMainContainer;
     Business business;
-    CSREnterprise enterprise;
-    Organization organization;
-    CSRAdminProfile currentAuthenticatedUser;
+    NGOEnterprise enterprise;
+    NGOAdministrationOrganization organization;
+    NGOSupervisorProfile currentAuthenticatedUser;
     UserAccount currentUser;
-    public CSRAdminManageProfileJPanel(Business business, CSREnterprise enterprise, CSRAdministrationOrganization organization, CSRAdminProfile currentAuthenticatedUser, UserAccount currentUser) {
+    
+    public NGOAdminManageProfileJPanel(JPanel UserMainContainer, Business business, NGOEnterprise enterprise, NGOAdministrationOrganization organization, NGOSupervisorProfile currentAuthenticatedUser, UserAccount currentUser) {
         initComponents();
         
+        this.UserMainContainer = UserMainContainer;
         this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
@@ -53,49 +57,40 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtAddress = new javax.swing.JTextField();
-        spinnerAge = new javax.swing.JSpinner();
-        jLabel12 = new javax.swing.JLabel();
-        txtPhoneNumber = new javax.swing.JTextField();
-        labelFirstName = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        ethnicityComboBox = new javax.swing.JComboBox<>();
-        labelLastName = new javax.swing.JLabel();
-        genderComboBox = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        btnRegister = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        txtLastName = new javax.swing.JTextField();
-        txtUserName = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtEmailId = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        labelAge = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        labelFirstName = new javax.swing.JLabel();
         txtFirstName = new javax.swing.JTextField();
+        btnRegister = new javax.swing.JButton();
+        labelLastName = new javax.swing.JLabel();
+        txtLastName = new javax.swing.JTextField();
+        labelAge = new javax.swing.JLabel();
+        spinnerAge = new javax.swing.JSpinner();
+        jLabel3 = new javax.swing.JLabel();
+        genderComboBox = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        ethnicityComboBox = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        txtPhoneNumber = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtEmailId = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtAddress = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        txtUserName = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(167, 219, 154));
-
-        spinnerAge.setModel(new javax.swing.SpinnerNumberModel(0, 0, 120, 1));
-
-        jLabel12.setText("User Name:");
-
-        labelFirstName.setText("First Name:");
-
-        jLabel7.setText("Address:");
-
-        labelLastName.setText("Last Name:");
-
-        genderComboBox.setToolTipText("");
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel1.setText("Manage Profile");
 
-        jLabel13.setText("Password:");
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel2.setText("NGO Supervisor's Personal Information:");
+
+        labelFirstName.setText("First Name:");
 
         btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -104,21 +99,30 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
             }
         });
 
+        labelLastName.setText("Last Name:");
+
+        labelAge.setText("Age:");
+
+        spinnerAge.setModel(new javax.swing.SpinnerNumberModel(0, 0, 120, 1));
+
+        jLabel3.setText("Gender:");
+
+        genderComboBox.setToolTipText("");
+
         jLabel4.setText("Ethnicity:");
+
+        jLabel5.setText("Phone Number:");
+
+        jLabel6.setText("Email:");
+
+        jLabel7.setText("Address:");
 
         jLabel8.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel8.setText("User Credentials:");
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jLabel2.setText("CSR Admin Personal Information:");
+        jLabel12.setText("User Name:");
 
-        jLabel5.setText("Phone Number:");
-
-        labelAge.setText("Age:");
-
-        jLabel6.setText("Email:");
-
-        jLabel3.setText("Gender:");
+        jLabel13.setText("Password:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -130,12 +134,12 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(318, 318, 318)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(294, 294, 294)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(22, 22, 22)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(211, 211, 211)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(197, 197, 197)
                             .addComponent(jLabel8))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(23, 23, 23)
@@ -144,7 +148,7 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
                             .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(183, 183, 183)
                             .addComponent(jLabel12)
-                            .addGap(36, 36, 36)
+                            .addGap(34, 34, 34)
                             .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(23, 23, 23)
@@ -185,7 +189,7 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
                             .addGap(34, 34, 34)
                             .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(376, 376, 376)
+                            .addGap(379, 379, 379)
                             .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
@@ -196,29 +200,26 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jLabel1)
-                    .addGap(48, 48, 48)
+                    .addGap(53, 53, 53)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel2)
                         .addComponent(jLabel8))
                     .addGap(17, 17, 17)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(3, 3, 3)
-                            .addComponent(labelFirstName))
                         .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addComponent(jLabel12))
+                        .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(3, 3, 3)
-                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelFirstName)
+                                .addComponent(jLabel12))))
                     .addGap(20, 20, 20)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(7, 7, 7)
+                            .addGap(10, 10, 10)
                             .addComponent(labelLastName))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(4, 4, 4)
+                            .addGap(7, 7, 7)
                             .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(3, 3, 3)
@@ -260,7 +261,7 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
                             .addGap(3, 3, 3)
                             .addComponent(jLabel7))
                         .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(34, 34, 34)
+                    .addGap(8, 8, 8)
                     .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
@@ -279,71 +280,71 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
         String spinnerValue = spinnerAge.getValue().toString();
 
         if(spinnerValue.isBlank()) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor Age is null!");
+            JOptionPane.showMessageDialog(this, "Supervisors Age is null!");
             return;
         }
 
         if(patientFirstName.isBlank()) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor First Name can't be null!");
+            JOptionPane.showMessageDialog(this, "Supervisors First Name can't be null!");
             return;
         }
 
         if(patientLastName.isBlank()) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor Last Name can't be null!");
+            JOptionPane.showMessageDialog(this, "Supervisors Last Name can't be null!");
             return;
         }
 
         if(phoneNumber.isBlank()) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor Phone number can't be null!");
+            JOptionPane.showMessageDialog(this, "Supervisors Phone number can't be null!");
             return;
         }
 
         if(emailId.isBlank()) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor Email ID can't be null!");
+            JOptionPane.showMessageDialog(this, "Supervisors Email ID can't be null!");
             return;
         }
 
         if(address.isBlank()) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor address can't be null!");
+            JOptionPane.showMessageDialog(this, "Supervisors address can't be null!");
             return;
         }
 
         if(userName.isBlank()){
-            JOptionPane.showMessageDialog(this, "CSR Supervisor User Name can't be null!");
+            JOptionPane.showMessageDialog(this, "Supervisors User Name can't be null!");
             return;
         }
 
         if(password.isBlank()){
-            JOptionPane.showMessageDialog(this, "CSR Supervisor password can't be null!");
+            JOptionPane.showMessageDialog(this, "Supervisors password can't be null!");
             return;
         }
 
         if(!isValidPassword(password)) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor password is not valid!");
+            JOptionPane.showMessageDialog(this, "Supervisors password is not valid!");
             return;
         }
 
         if(!isValidEmail(emailId)) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor Email ID is invalid!");
+            JOptionPane.showMessageDialog(this, "Supervisors Email ID is invalid!");
             return;
         }
 
         if(!isValidPhoneNumber(phoneNumber)){
-            JOptionPane.showMessageDialog(this, "CSR Supervisor Phone number is invalid!");
+            JOptionPane.showMessageDialog(this, "Supervisors Phone number is invalid!");
             return;
         }
 
         Gender selectedGender = (Gender) genderComboBox.getSelectedItem();
 
         if(selectedGender == null) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor Gender is not selected!");
+            JOptionPane.showMessageDialog(this, "Supervisors Gender is not selected!");
             return;
         }
 
         Ethnicity selectedEthnicity = (Ethnicity) ethnicityComboBox.getSelectedItem();
 
         if(selectedEthnicity == null) {
-            JOptionPane.showMessageDialog(this, "CSR Supervisor Ethnicity is not selected!");
+            JOptionPane.showMessageDialog(this, "Supervisors Ethnicity is not selected!");
             return;
         }
 
@@ -354,7 +355,7 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
             return;
         }
 
-        //Signup Shelter Supervisor
+        //Signup NGO Supervisor
         Person p = new Person();
         p.setFirstName(patientFirstName);
         p.setLastName(patientLastName);
@@ -365,14 +366,14 @@ public class CSRAdminManageProfileJPanel extends javax.swing.JPanel {
         p.setEmail(emailId);
         p.setAddress(address);
 
-        CSRAdminProfile csrAdmin = new CSRAdminProfile(p);
+        NGOSupervisorProfile ngoSupervisor = new NGOSupervisorProfile(p);
 
-        Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(csrAdmin.getRole());
-        Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(csrAdmin.getRole());
+        Enterprise supportedEnterprise = business.getEnterpriseCatalog().getSupportedEnterpriseGivenRole(ngoSupervisor.getRole());
+        Organization supportedOrganization = supportedEnterprise.getOrganizationGivenRole(ngoSupervisor.getRole());
 
-        UserAccount csrAdminUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(csrAdmin, userName, password, true);
+        UserAccount ngoSupervisorUser = supportedOrganization.getOrganizationUserDirectory().createUserAccount(ngoSupervisor, userName, password, true);
 
-        JOptionPane.showMessageDialog(this, "CSR Admin has been successfully Registered!! | " + csrAdminUser);
+        JOptionPane.showMessageDialog(this, "NGO Supervisor has been successfully Registered!! | " + ngoSupervisorUser);
 
         txtFirstName.setText("");
         txtLastName.setText("");
